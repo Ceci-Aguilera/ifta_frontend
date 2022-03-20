@@ -1,0 +1,52 @@
+.complex_banner_background_div{
+    position:relative !important;
+}
+
+.over_div{
+    width:100% !important;
+    position:absolute !important;
+    top: 0 !important;
+}
+
+.row{
+    width:100% !important;
+}
+
+.complex_banner_tag_p{
+    color: white !important;
+    padding-top: 100px !important;
+    text-align: center !important;
+}
+
+.complex_banner_h2{
+    color: white !important;
+    text-align: center !important;
+    font-size: 3.5rem !important;
+}
+
+.complex_banner_p_div{
+    width: 100% !important;
+    max-width: 600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-top: 50px !important;
+}
+
+.complex_banner_p{
+    color: white !important;
+    text-align: center !important;
+    font-size: 2.0rem !important;
+}
+
+.mini_phone_img_div{
+    margin-top: 50px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+@media screen and (max-width:578px){
+    .complex_banner_background_div{
+        display: none !important;
+    }
+}

@@ -1,0 +1,14 @@
+.navbar{
+    width: 100% !important;
+    height: 125px !important;
+    background-color: #242020; 
+}
+
+.navbar_title{
+    color: white !important;
+    text-align: center !important;
+    align-self: baseline !important;
+    line-height: 125px !important;
+    font-size: 4.0vw;
+    font-weight: normal;
+}

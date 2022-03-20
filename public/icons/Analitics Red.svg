@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="26.204332mm"
+   height="26.20433mm"
+   viewBox="0 0 26.204332 26.20433"
+   version="1.1"
+   id="svg3347"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="Reports Red.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3349"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.77771465"
+     inkscape:cx="251.37755"
+     inkscape:cy="-93.221852"
+     inkscape:window-width="2560"
+     inkscape:window-height="1351"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs3344" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-38.609176,-173.33082)">
+    <g
+       id="g3395">
+      <path
+         d="M 64.813509,199.53515 H 38.609176 v -26.20433 h 26.204333 z"
+         style="fill:#e01f29;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+         id="path395" />
+      <path
+         d="m 58.873084,186.93922 h -2.370313 v 3.60328 h 2.370313 z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+         id="path397" />
+      <path
+         d="m 55.670215,181.04748 h -2.370314 v 9.49466 h 2.370314 z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+         id="path399" />
+      <path
+         d="m 52.467346,183.3356 h -2.370314 v 7.2069 h 2.370314 z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+         id="path401" />
+      <path
+         d="m 49.378423,184.76576 h -2.369961 v 5.77674 h 2.369961 z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+         id="path403" />
+      <g
+         id="g405"
+         transform="matrix(0.35277777,0,0,-0.35277777,45.558193,191.5762)">
+        <path
+           d="M 0,0 V 35.878 H -6.718 V -6.718 H 43.335 V 0 Z"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path407" />
+      </g>
+    </g>
+  </g>
+</svg>

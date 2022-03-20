@@ -1,0 +1,22 @@
+.footer{
+    height: 300px !important;
+    width: 100% !important;
+    background-color: #353535 !important;
+}
+
+.footer_p{
+    color: white !important;
+    padding-top: 100px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 2.0rem !important;
+    text-align: center !important;
+}
+
+.footer_row{
+    width: 100% !important;
+    max-width: 300px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
