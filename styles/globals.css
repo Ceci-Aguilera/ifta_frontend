@@ -24,9 +24,17 @@ body {
 
 @font-face {
   font-family: "Century Gothic";
-  src: url("/fonts/Century Gothic/Century Gothic") format("truetype");
+  src: url("/fonts/Century Gothic/Century Gothic.ttf") format("truetype");
     font-style: normal;
   font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Century Gothic";
+  src: url("/fonts/Century Gothic/Century Gothic Bold Font.ttf") format("truetype");
+    font-style: normal;
+  font-weight: bold;
   font-display: swap;
 }
 
@@ -45,4 +53,5 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: "Century Gothic";
 }

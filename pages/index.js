@@ -61,9 +61,8 @@ export default function Home() {
                   <h3 className={styles.title_h3}>Features</h3>
 
                   <p className={styles.features_section_p}>
-                    A simple way to fill, you dont need to connect with GPS,
-                    Fuel cards, ELDs. It is just fill miles and gallons and
-                    select place manually, the App will take care of the rest!
+                    No need to connect with GPS, Fuel cards, or ELDs, just enter
+                    your data manually and the App will take care the rest!
                   </p>
                 </div>
                 <Row className={styles.features_section_icon_row}>
