@@ -1,0 +1,67 @@
+.account_info_card{
+    width: 90% !important;
+    max-width: 1000px !important;
+    margin-top: 50px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 200px !important;
+    border-color: #696d71;
+    border-radius: 0px !important;
+}
+
+.account_info_card_header{
+    background-color: white !important;
+    color: #353535 !important;
+    border: 0px !important;
+    font-weight: bold !important;
+    text-align: center;
+}
+
+.account_info_title_h1{
+    font-weight: bold;
+}
+
+.account_info_card_footer{
+    background-color: white !important;
+    border: 0px !important;
+    text-align: center !important;
+}
+
+.account_info_button{
+    width: 250px !important;
+    height: 50px !important;
+    background-color: #e1242b !important;
+    border-color: #e1242b;
+    border-radius: 0px !important;
+    margin-top: 50px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 50px !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+}
+
+.account_info_button:hover,
+.account_info_button:active,
+.account_info_button:after,
+.account_info_button:focus{
+    color: white;
+    background-color: #85181b !important;
+    border: 1px solid #85181b;
+}
+
+.account_info_card_p{
+    font-size: 1.1rem !important;
+}
+
+.account_info_card_span{
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+}
+
+.account_info_col_wrapper{
+    width: 100% !important;
+    max-width: max-content !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}

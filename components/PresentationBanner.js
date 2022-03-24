@@ -2,11 +2,14 @@ import styles from "../styles/PresentationBanner.module.css";
 
 import presentation_banner_img from "../public/images/Background.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 import phone_middle_img from "../public/images/phone middle.png";
 import iphone_icon from "../public/icons/apple-logo.png";
 import android_icon from "../public/icons/android-logo.png";
 import ifta_logo from "../public/logos/ifta-logo.png";
+
+import login_icon from "../public/icons/Login.png";
 
 import { Col, Row } from "react-bootstrap";
 
@@ -19,7 +22,6 @@ export default function PresentationBanner() {
           alt="Ifta App"
           className={styles.banner_div_img}
         />
-
 
         <div className={styles.over_div}>
           <Row className={styles.banner_row}>
@@ -34,6 +36,19 @@ export default function PresentationBanner() {
                 <h2 className={styles.banner_h2}>
                   Save time and money with our APP
                 </h2>
+
+                <div className={styles.spacer} />
+
+              <Link href="/credentials/login">
+
+                <Image
+                  src={login_icon}
+                  alt="Login Icon"
+                  className={styles.banner_login_icon}
+                  width={75}
+                  height={75}
+                />
+              </Link>
               </div>
             </Col>
 

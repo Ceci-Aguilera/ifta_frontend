@@ -97,6 +97,15 @@
     text-align: center !important;  
 }
 
+.spacer{
+    height: 50px !important;
+    width: 50px !important
+}
+
+.banner_login_icon{
+    cursor: pointer;
+}
+
 @media screen and (max-width:578px){
     .banner_app_col{
         display: none !important;

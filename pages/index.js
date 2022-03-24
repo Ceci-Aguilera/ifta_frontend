@@ -11,17 +11,37 @@ import youtube_icon from "../public/icons/Youtube.svg";
 import ComplexBanner from "../components/ComplexBanner";
 
 import phone_red_icon from "../public/icons/Phone Red.svg";
-import analitic_red_icon from "../public/icons/Analitics Red.svg";
+import analytic_red_icon from "../public/icons/Analytics Red.svg";
 import reports_red_icon from "../public/icons/Reports Red.svg";
 import SimpleBanner from "../components/SimpleBanner";
 
-import signing_icon from "../public/icons/Signign Red.svg";
+import signing_icon from "../public/icons/Signing Red.svg";
 import data_icon from "../public/icons/Data Red.svg";
 import tax_icon from "../public/icons/Tax Red.svg";
 import file_icon from "../public/icons/File Red.svg";
+
+import { useAuth } from "../context/AuthContext";
+import {useEffect, useState} from "react"
+import { useRouter } from 'next/router'
+
+
 import ClientsTestimony from "../components/ClientsTestimony";
 
+
+
 export default function Home() {
+
+    const { auth, user, register } = useAuth();
+
+    const router = useRouter()
+
+    useEffect(() => {
+        if(user != undefined){
+            router.push('/credentials/manage-account/account-info')
+        }
+    })
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -186,7 +206,7 @@ export default function Home() {
               >
                 <div className={styles.steps_section_icon_col_wrapper}>
                   <Image
-                    src={analitic_red_icon}
+                    src={analytic_red_icon}
                     height={75}
                     width={75}
                     alt="Analytics Red Icon"
