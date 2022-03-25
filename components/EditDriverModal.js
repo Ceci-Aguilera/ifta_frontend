@@ -1,23 +1,30 @@
 import Link from "next/link";
-import { Card, Col, Row, Container, Button, Form } from "react-bootstrap";
+import { Card, Col, Row, Container, Button, Form, Modal } from "react-bootstrap";
 import styles from "../styles/CreateDriver.module.css";
 // import axios from "axios";
 import { useEffect, useState } from "react";
-import { useAuth } from "../context/AuthContext";
 // import {AlertDanger} from "./Alerts"
 
-const CreateDriver = () => {
-    const { auth, user, addDriver } = useAuth();
+const EditDriver = ({driver, editModal, show_modal, close_modal}) => {
 
-  const [first_name, setFirstName] = useState("");
-  const [last_name, setLastName] = useState("");
-  const [CDL_no, setCDLNum] = useState("");
-  const [country, setCountry] = useState("");
-  const [usa_state, setUsaState] = useState("");
-  const [email, setEmail] = useState("");
+  const [first_name, setFirstName] = useState(driver?driver.first_name:"None");
+  const [last_name, setLastName] = useState(driver?driver.last_name:"None");
+  const [CDL_no, setCDLNum] = useState(driver?driver.cdl_no:"None");
+  const [country, setCountry] = useState(driver?driver.country:"None");
+  const [usa_state, setUsaState] = useState(driver?driver.usa_state:"None");
+  const [email, setEmail] = useState(driver?driver.email:"None");
 
 
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+      setFirstName(driver?driver.first_name:"None");
+      setLastName(driver?driver.last_name:"None");
+      setCDLNum(driver?driver.cdl_no:"None");
+      setCountry(driver?driver.country:"None");
+      setUsaState(driver?driver.usa_state:"None");
+      setEmail(driver?driver.email:"None");
+  }, [driver])
 
   const body = JSON.stringify({
     first_name,
@@ -28,14 +35,21 @@ const CreateDriver = () => {
     email
   });
 
-  const loginHandler = async (e) => {
+  const onEditDriverHelper = async (e) => {
     e.preventDefault();
-    const result = await addDriver(body);
+    const result = await editModal(driver.id, body);
     setMessage(result);
   };
 
   return (
-    <div className={styles.main_div}>
+      (driver == null)?<div></div>:(
+          <div className="account_edit_info_modal_div">
+              <Modal show={show_modal} onHide={close_modal} className="edit-modal">
+                  <Modal.Header closeVariant="white" closeButton className="edit-modal-header">
+                      <Modal.Title className="edit-modal-title">EDIT INFO</Modal.Title>
+                  </Modal.Header>
+
+                  <Modal.Body className="edit-modal-body">
       {/* <Row>
             {message?<div>
               <AlertDanger error={"Error"} error_description={message} />
@@ -160,18 +174,25 @@ const CreateDriver = () => {
 
           </div>
         </Card.Body>
-
-        <Card.Footer className={styles.card_footer}>
-          <Button
-            className={styles.card_footer_button}
-            onClick={(e) => loginHandler(e)}
-          >
-            SAVE
-          </Button>
-        </Card.Footer>
       </Card>
+      </Modal.Body>
+
+      <Modal.Footer className="edit-modal-footer">
+        <Button
+          variant="secondary"
+          className="edit-modal-close-button"
+          onClick={close_modal}
+        >
+          Close
+        </Button>
+        <Button variant="primary" className="edit-modal-save-button" onClick={(e) => onEditDriverHelper(e)}>
+          Save changes
+        </Button>
+      </Modal.Footer>
+      </Modal>
     </div>
+)
   );
 };
 
-export default CreateDriver;
+export default EditDriver;

@@ -1,7 +1,7 @@
 import { Button, Row, Col, Container, Card } from "react-bootstrap";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../../../styles/AccountInfo.module.css";
+import styles from "../../../styles/TrucksInfo.module.css";
 import  NextNavbar from "../../../components/Navbar";
 import AddTruckModal from "../../../components/AddTruckModal"
 import EditTruckModal from "../../../components/EditTruckModal"
@@ -12,7 +12,7 @@ import {useEffect, useState} from "react";
 
 export default function TrucksInfo() {
 
-    const { auth, user, trucks, editTruck} = useAuth();
+    const { auth, user, trucks, editTruck, deleteTruck} = useAuth();
 
     const [show_modal, setShowModal] = useState(false)
     const [show_edit_modal, setShowEditModal] = useState(false)
@@ -25,6 +25,12 @@ export default function TrucksInfo() {
         e.preventDefault();
         setSelectedTruck(truck);
         setShowEditModal(true);
+    }
+
+    const onDelete = async(e, truck) => {
+        e.preventDefault();
+        setSelectedTruck(truck)
+        await deleteTruck(truck.id);
     }
 
 
@@ -42,27 +48,101 @@ export default function TrucksInfo() {
         <div className={styles.trucks_info_div}>
         {(trucks !== null)?(
             <div>
-            {trucks.map((truck, index) => {
-                return (<Card key={index} className={styles.trucks_info_div_card}>
-                        <Card.Header className={styles.trucks_info_div_card_header}>
-                            {truck.plate}
-                        </Card.Header>
-                        <Card.Body className={styles.trucks_info_div_card_body}>
-                            <p className={styles.trucks_info_div_card_p}>
-                                <span className={styles.trucks_info_div_card_span}>
-                                    Truck Unit:
-                                </span>{" "}
-                                {truck.truck_unit}
-                            </p>
+                <Card className={styles.trucks_info_table_card}>
+                    <Card.Header className={styles.trucks_info_table_card_header}>
+                        <Row className={styles.trucks_info_table_card_header_row}>
+                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_table_card_header_col}>
+                                <span className={styles.trucks_info_table_card_header_span}>
+                                    UNIT NO.
+                                </span>
+                            </Col>
 
-                            <div className={styles.truck_info_card_button_div}>
-                                <Button variant="danger" className={styles.trucks_info_card_button} onClick={(e) => onSelectTruck(e, truck)}>
-                                    Edit
-                                </Button>
-                            </div>
-                        </Card.Body>
-                    </Card>)
-            })}
+                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_table_card_header_col}>
+                                <span className={styles.trucks_info_table_card_header_span}>
+                                    PLATE NO.
+                                </span>
+                            </Col>
+
+                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_table_card_header_col}>
+                                <span className={styles.trucks_info_table_card_header_span}>
+                                    FLEET NAME
+                                </span>
+                            </Col>
+
+                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_table_card_header_col}>
+                                <span className={styles.trucks_info_table_card_header_span}>
+                                    VEHICLE FLEET NO.
+                                </span>
+                            </Col>
+                        </Row>
+                    </Card.Header>
+
+                    <Card.Body className={styles.trucks_info_table_card_body}>
+
+                        {trucks.map((truck, index) => {
+                            return (
+                                <Card key={index} className={styles.trucks_info_div_card}>
+                                    <Card.Body className={styles.trucks_info_div_card_body}>
+
+                                        <Row className={styles.trucks_info_div_card_row}>
+                                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_div_card_col}>
+                                                <span className={styles.trucks_info_div_card_span}>
+                                                    {truck.truck_unit}
+                                                </span>
+                                            </Col>
+
+                                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_div_card_col}>
+                                                <span className={styles.trucks_info_div_card_span}>
+                                                    {truck.license_plate_no}
+                                                </span>
+                                            </Col>
+
+                                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_div_card_col}>
+                                                <span className={styles.trucks_info_div_card_span}>
+                                                    {truck.fleet_name}
+                                                </span>
+                                            </Col>
+
+                                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_div_card_col}>
+                                                <span className={styles.trucks_info_div_card_span}>
+                                                    {truck.vehicle_fleet_no}
+                                                </span>
+                                            </Col>
+                                        </Row>
+
+                                    </Card.Body>
+
+                                    <Card.Footer className={styles.trucks_info_div_card_footer}>
+
+                                        <Row className={styles.trucks_info_div_card_row}>
+                                            <Col xs ={6} sm={6} md={6} lg={6} className={styles.trucks_info_div_card_col}>
+
+                                                <div className={styles.truck_info_card_button_div}>
+                                                    <Button variant="danger" className={styles.trucks_info_card_button} onClick={(e) => onSelectTruck(e, truck)}>
+                                                        Edit
+                                                    </Button>
+                                                </div>
+
+                                            </Col>
+
+                                            <Col xs ={6} sm={6} md={6} lg={6} className={styles.trucks_info_div_card_col}>
+
+                                                <div className={styles.trucks_info_delete_button_div}>
+                                                    <Button variant="danger" className={styles.trucks_info_delete_button} onClick={(e) => onDelete(e, truck)}>
+                                                        Delete
+                                                    </Button>
+                                                </div>
+
+                                            </Col>
+
+                                        </Row>
+                                    </Card.Footer>
+                                </Card>
+                            )
+                        })}
+
+                    </Card.Body>
+                </Card>
             </div>
         )
         :<div></div>}
@@ -72,6 +152,8 @@ export default function TrucksInfo() {
                     Add Truck
                 </Button>
             </div>
+
+
         </div>
 
         <AddTruckModal show_modal={show_modal} close_modal={handleCloseModal} />

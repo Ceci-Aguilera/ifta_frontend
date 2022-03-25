@@ -21,7 +21,7 @@ export default function NextNavbar() {
           <Nav className="ms-auto">
             <Nav.Link href="/credentials/manage-account/account-info" className={styles.link}>Company</Nav.Link>
             <Nav.Link href="/credentials/manage-account/trucks-info" className={styles.link}>Truck</Nav.Link>
-            <Nav.Link href="#pricing" className={styles.link}>Driver</Nav.Link>
+            <Nav.Link href="/credentials/manage-account/drivers-info" className={styles.link}>Driver</Nav.Link>
             <Nav.Link href="#pricing" className={styles.link}>Payment</Nav.Link>
             <Nav.Link href="#pricing" className={styles.link}>Reports</Nav.Link>
             <Nav.Link href="/credentials/logout" className={styles.link}>Logout</Nav.Link>
