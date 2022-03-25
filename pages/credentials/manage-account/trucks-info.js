@@ -10,9 +10,18 @@ import { useAuth } from "../../../context/AuthContext";
 
 import {useEffect, useState} from "react";
 
+function customFilter(current_driver) {
+   return function(element) {
+      var result = element;
+      return result.id === current_driver;
+   }
+}
+
 export default function TrucksInfo() {
 
-    const { auth, user, trucks, editTruck, deleteTruck} = useAuth();
+    const { auth, user, drivers, trucks, editTruck, deleteTruck} = useAuth();
+
+    console.log(drivers)
 
     const [show_modal, setShowModal] = useState(false)
     const [show_edit_modal, setShowEditModal] = useState(false)
@@ -51,27 +60,33 @@ export default function TrucksInfo() {
                 <Card className={styles.trucks_info_table_card}>
                     <Card.Header className={styles.trucks_info_table_card_header}>
                         <Row className={styles.trucks_info_table_card_header_row}>
-                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_table_card_header_col}>
+                            <Col xs={2} sm={2} md={2} lg={2} className={styles.trucks_info_table_card_header_col}>
                                 <span className={styles.trucks_info_table_card_header_span}>
                                     UNIT NO.
                                 </span>
                             </Col>
 
-                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_table_card_header_col}>
+                            <Col xs={2} sm={2} md={2} lg={2} className={styles.trucks_info_table_card_header_col}>
                                 <span className={styles.trucks_info_table_card_header_span}>
                                     PLATE NO.
                                 </span>
                             </Col>
 
-                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_table_card_header_col}>
+                            <Col xs={3} sm={3} md={3} lg={3} className={styles.trucks_info_table_card_header_col}>
                                 <span className={styles.trucks_info_table_card_header_span}>
                                     FLEET NAME
                                 </span>
                             </Col>
 
-                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_table_card_header_col}>
+                            <Col xs={2} sm={2} md={2} lg={2} className={styles.trucks_info_table_card_header_col}>
                                 <span className={styles.trucks_info_table_card_header_span}>
                                     VEHICLE FLEET NO.
+                                </span>
+                            </Col>
+
+                            <Col xs={3} sm={3} md={3} lg={3} className={styles.trucks_info_table_card_header_col}>
+                                <span className={styles.trucks_info_table_card_header_span}>
+                                    Current Driver
                                 </span>
                             </Col>
                         </Row>
@@ -85,13 +100,13 @@ export default function TrucksInfo() {
                                     <Card.Body className={styles.trucks_info_div_card_body}>
 
                                         <Row className={styles.trucks_info_div_card_row}>
-                                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_div_card_col}>
+                                            <Col xs={2} sm={2} md={2} lg={2} className={styles.trucks_info_div_card_col}>
                                                 <span className={styles.trucks_info_div_card_span}>
                                                     {truck.truck_unit}
                                                 </span>
                                             </Col>
 
-                                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_div_card_col}>
+                                            <Col xs={2} sm={2} md={2} lg={2} className={styles.trucks_info_div_card_col}>
                                                 <span className={styles.trucks_info_div_card_span}>
                                                     {truck.license_plate_no}
                                                 </span>
@@ -103,9 +118,15 @@ export default function TrucksInfo() {
                                                 </span>
                                             </Col>
 
-                                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_div_card_col}>
+                                            <Col xs={2} sm={2} md={2} lg={2} className={styles.trucks_info_div_card_col}>
                                                 <span className={styles.trucks_info_div_card_span}>
                                                     {truck.vehicle_fleet_no}
+                                                </span>
+                                            </Col>
+
+                                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_div_card_col}>
+                                                <span className={styles.trucks_info_div_card_span}>
+                                                    {truck.current_driver?drivers.filter(customFilter(truck.current_driver))[0]?drivers.filter(customFilter(truck.current_driver))[0].email:"None":"None"}
                                                 </span>
                                             </Col>
                                         </Row>
@@ -159,7 +180,7 @@ export default function TrucksInfo() {
         <AddTruckModal show_modal={show_modal} close_modal={handleCloseModal} />
 
         {(selected_truck != null)?
-            <EditTruckModal truck={selected_truck} editModal={editTruck} show_modal={show_edit_modal} close_modal={handleCloseEditModal} />
+            <EditTruckModal truck={selected_truck} drivers={drivers} editModal={editTruck} show_modal={show_edit_modal} close_modal={handleCloseEditModal} />
         :<div></div>}
 
       </main>

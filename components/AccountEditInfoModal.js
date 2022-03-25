@@ -169,7 +169,6 @@ function AccountEditInfoModal({user, editModal, show_modal, close_modal}){
                         >
                           <option
                             className={styles.select_form_option}
-                            value={"FL"}
                             disabled
                           >
                             State
@@ -179,6 +178,13 @@ function AccountEditInfoModal({user, editModal, show_modal, close_modal}){
                             value={"FL"}
                           >
                             FL
+                          </option>
+
+                          <option
+                            className={styles.select_form_option}
+                            value={"CA"}
+                          >
+                            CA
                           </option>
                         </Form.Select>
                         </Form.Group>

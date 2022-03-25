@@ -17,6 +17,7 @@ export default function AccountInfo() {
 
     const handleCloseModal = () => setShowModal(false)
 
+
   return (user==null)?<div></div>:(
     <div className={styles.container}>
       <Head>
@@ -85,7 +86,7 @@ export default function AccountInfo() {
                                     <p className={styles.account_info_card_p}><span className={styles.account_info_card_span}>
                                         State:
                                         </span>{" "}
-                                        {user.usa_state}
+                                        {user.usa_state.replace("USAState.", "")}
                                     </p>
 
                                     <p className={styles.account_info_card_p}><span className={styles.account_info_card_span}>

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import CreateAccountTruck from "./CreateAccountTruck"
 
-function EditTruckModal({truck, editModal, show_modal, close_modal}){
+function EditTruckModal({truck, drivers, editModal, show_modal, close_modal}){
 
     const [truck_unit, setTruckUnit] = useState(truck?truck.truck_unit:"None");
     const [gross_weight, setGrossWeight] = useState(truck?truck.gross_vehicle_weight:"None");
@@ -22,6 +22,7 @@ function EditTruckModal({truck, editModal, show_modal, close_modal}){
     const [axle, setAxle] = useState(truck?truck.axle:"None");
     const [ny_hut, setNyHut] = useState(truck?truck.ny_hut:"None");
     const [plate_pass, setPlatePass] = useState(truck?truck.or_plate_pass:"None");
+    const [current_driver, setCurrentDriver] = useState(truck?truck.current_driver:"None")
 
     useEffect(() => {
         setTruckUnit(truck?truck.truck_unit:"None");
@@ -38,6 +39,7 @@ function EditTruckModal({truck, editModal, show_modal, close_modal}){
         setAxle(truck?truck.axle:"None");
         setNyHut(truck?truck.ny_hut:"None");
         setPlatePass(truck?truck.or_plate_pass:"None");
+        setCurrentDriver(truck?truck.current_driver:"None");
     }, [truck])
 
 
@@ -55,7 +57,8 @@ function EditTruckModal({truck, editModal, show_modal, close_modal}){
       unloaded_vehicle_weight: unloaded_weight,
       axle,
       ny_hut,
-      or_plate_pass: plate_pass
+      or_plate_pass: plate_pass,
+      current_driver
     });
 
     const onEditTruckHelper = async(e) => {
@@ -323,6 +326,39 @@ function EditTruckModal({truck, editModal, show_modal, close_modal}){
                             onChange={(e) => setPlatePass(e.target.value)}
                             className={styles.form_control}
                           />
+                        </Form.Group>
+                      </Col>
+                    </Row>
+
+                    <Row>
+
+                      <Col xs={12} sm={12} md={12} lg={12}>
+                        <Form.Group className={`mb-3 ${styles.form_group}`}>
+                        <Form.Select
+                          size="lg"
+                          value={current_driver}
+                          onChange={(e) => setCurrentDriver(e.target.value)}
+                          className={styles.form_control}
+                        >
+                          <option
+                            className={styles.select_form_option}
+                            disabled
+                          >
+                            Driver
+                          </option>
+                          {drivers.map((driver, index) => {
+                              return(
+                                  <option
+                                  key={index}
+                                    className={styles.select_form_option}
+                                    value={driver.email}
+                                  >
+                                    {driver.first_name + " " + driver.last_name}
+                                  </option>
+                              )
+                          })}
+
+                        </Form.Select>
                         </Form.Group>
                       </Col>
                     </Row>
