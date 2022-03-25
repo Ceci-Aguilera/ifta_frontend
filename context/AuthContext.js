@@ -416,6 +416,31 @@ const deleteTruck = async(truck_id) => {
 
 
 
+
+
+
+const makePayment = async(body) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    };
+
+    const payment_url = `${domain}/user-account/extend-service`
+
+    return axios.post(payment_url, body, config).then(async (response) => {
+      const res = await response.data
+  }).catch(async (error) => {
+      console.log(error);
+  })
+}
+
+
+
+
+
+
   const logout = async () => {
 
 
@@ -431,7 +456,7 @@ const deleteTruck = async(truck_id) => {
 
 
   return (
-    <AuthContext.Provider value={{ auth, user, token, id, drivers, trucks, logout, register, login, edit, addDriver, editDriver, deleteDriver, addTruck, editTruck, deleteTruck }}>
+    <AuthContext.Provider value={{ auth, user, token, id, drivers, trucks, logout, register, login, edit, addDriver, editDriver, deleteDriver, addTruck, editTruck, deleteTruck, makePayment }}>
       {children}
     </AuthContext.Provider>
   );

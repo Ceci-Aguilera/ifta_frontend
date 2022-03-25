@@ -1,0 +1,64 @@
+.form_card{
+    width: 90% !important;
+    max-width: 1000px !important;
+    margin-top: 50px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 200px !important;
+    border-color: #696d71;
+    border-radius: 0px !important;
+}
+
+.form_card_header{
+    background-color: white !important;
+    color: #353535 !important;
+    border: 0px !important;
+    font-weight: bold !important;
+    text-align: center;
+}
+
+.form_card_header_h1{
+    font-weight: bold;
+}
+
+.form_group{
+    width: 100% !important;
+    margin-top: 20px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.form_control{
+    height: 60px !important;
+    border-color:#696d71 !important;
+    border-radius: 0px !important;
+}
+
+.form_card_footer{
+    background-color: white !important;
+    border: 0px !important;
+    text-align: center !important;
+}
+
+.form_card_footer_button{
+    width: 250px !important;
+    height: 50px !important;
+    background-color: #e1242b !important;
+    border-color: #e1242b;
+    border-radius: 0px !important;
+    margin-top: 50px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 50px !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+}
+
+.form_card_footer_button:active,
+.form_card_footer_button:focus,
+.form_card_footer_button:hover,
+.form_card_footer_button:after{
+    color: white;
+    background-color: #85181b !important;
+    border: 1px solid #85181b;
+}

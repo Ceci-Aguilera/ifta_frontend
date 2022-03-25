@@ -122,6 +122,12 @@ export default function AccountInfo() {
                                         </span>{" "}
                                         {user.email}
                                     </p>
+
+                                    <p className={styles.account_info_card_p}><span className={styles.account_info_card_span}>
+                                        Paid Until:
+                                        </span>{" "}
+                                        {user.paid_until}
+                                    </p>
                                 </div>
                             </Col>
 
