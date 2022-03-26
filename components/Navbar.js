@@ -23,7 +23,7 @@ export default function NextNavbar() {
             <Nav.Link href="/credentials/manage-account/trucks-info" className={styles.link}>Truck</Nav.Link>
             <Nav.Link href="/credentials/manage-account/drivers-info" className={styles.link}>Driver</Nav.Link>
             <Nav.Link href="/credentials/manage-account/create-payment" className={styles.link}>Payment</Nav.Link>
-            <Nav.Link href="#pricing" className={styles.link}>Reports</Nav.Link>
+            <Nav.Link href="/credentials/manage-account/taxes-truck-year" className={styles.link}>Reports</Nav.Link>
             <Nav.Link href="/credentials/logout" className={styles.link}>Logout</Nav.Link>
           </Nav>
         </Navbar.Collapse>

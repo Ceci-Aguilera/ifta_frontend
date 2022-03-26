@@ -22,7 +22,7 @@ function EditTruckModal({truck, drivers, editModal, show_modal, close_modal}){
     const [axle, setAxle] = useState(truck?truck.axle:"None");
     const [ny_hut, setNyHut] = useState(truck?truck.ny_hut:"None");
     const [plate_pass, setPlatePass] = useState(truck?truck.or_plate_pass:"None");
-    const [current_driver, setCurrentDriver] = useState(truck?truck.current_driver:"None")
+    const [current_driver, setCurrentDriver] = useState(truck?truck.current_driver:drivers?drivers[0]:"None")
 
     useEffect(() => {
         setTruckUnit(truck?truck.truck_unit:"None");
@@ -39,7 +39,7 @@ function EditTruckModal({truck, drivers, editModal, show_modal, close_modal}){
         setAxle(truck?truck.axle:"None");
         setNyHut(truck?truck.ny_hut:"None");
         setPlatePass(truck?truck.or_plate_pass:"None");
-        setCurrentDriver(truck?truck.current_driver:"None");
+        setCurrentDriver(truck?truck.current_driver:drivers?drivers[0]:"None");
     }, [truck])
 
 
@@ -342,7 +342,6 @@ function EditTruckModal({truck, drivers, editModal, show_modal, close_modal}){
                         >
                           <option
                             className={styles.select_form_option}
-                            disabled
                           >
                             Driver
                           </option>

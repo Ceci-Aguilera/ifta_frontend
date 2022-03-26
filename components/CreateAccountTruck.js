@@ -7,7 +7,7 @@ import { useAuth } from "../context/AuthContext";
 // import {AlertDanger} from "./Alerts"
 
 const CreateAccountTruck = () => {
-    const { auth, user, addTruck } = useAuth();
+  const { auth, user, addTruck } = useAuth();
 
   const [truck_unit, setTruckUnit] = useState("");
   const [gross_weight, setGrossWeight] = useState("");
@@ -82,25 +82,25 @@ const CreateAccountTruck = () => {
 
               <Col xs={12} sm={12} md={12} lg={6}>
                 <Form.Group className={`mb-3 ${styles.form_group}`}>
-                <Form.Select
-                  size="lg"
-                  value={gross_weight}
-                  onChange={(e) => setGrossWeight(e.target.value)}
-                  className={styles.form_control}
-                >
-                  <option
-                    className={styles.select_form_option}
-                    disabled
+                  <Form.Select
+                    size="lg"
+                    value={gross_weight}
+                    onChange={(e) => setGrossWeight(e.target.value)}
+                    className={styles.form_control}
                   >
-                    *Gross Vehicle Weight (GVW)
-                  </option>
-                  <option
-                    className={styles.select_form_option}
-                    value={"3000"}
-                  >
-                    3000
-                  </option>
-                </Form.Select>
+                    <option
+                      className={styles.select_form_option}
+                      disabled
+                    >
+                      *Gross Vehicle Weight (GVW)
+                    </option>
+                    <option
+                      className={styles.select_form_option}
+                      value={"3000"}
+                    >
+                      3000
+                    </option>
+                  </Form.Select>
                 </Form.Group>
               </Col>
             </Row>
@@ -108,25 +108,25 @@ const CreateAccountTruck = () => {
             <Row>
               <Col xs={12} sm={12} md={12} lg={6}>
                 <Form.Group className={`mb-3 ${styles.form_group}`}>
-                <Form.Select
-                  size="lg"
-                  value={fuel_type}
-                  onChange={(e) => setGrossWeight(e.target.value)}
-                  className={styles.form_control}
-                >
-                  <option
-                    className={styles.select_form_option}
-                    disabled
+                  <Form.Select
+                    size="lg"
+                    value={fuel_type}
+                    onChange={(e) => setGrossWeight(e.target.value)}
+                    className={styles.form_control}
                   >
-                    *Select Fuel Type
-                  </option>
-                  <option
-                    className={styles.select_form_option}
-                    value={"Biodiesel"}
-                  >
-                    Biodiesel
-                  </option>
-                </Form.Select>
+                    <option
+                      className={styles.select_form_option}
+                      disabled
+                    >
+                      *Select Fuel Type
+                    </option>
+                    <option
+                      className={styles.select_form_option}
+                      value={"Biodiesel"}
+                    >
+                      Biodiesel
+                    </option>
+                  </Form.Select>
                 </Form.Group>
               </Col>
 
@@ -162,7 +162,7 @@ const CreateAccountTruck = () => {
 
 
               <Col xs={12} sm={12} md={12} lg={6}>
-              <Form.Group className={`mb-3 ${styles.form_group}`}>
+                <Form.Group className={`mb-3 ${styles.form_group}`}>
                   <Form.Control
                     type="text"
                     size="lg"
@@ -238,51 +238,51 @@ const CreateAccountTruck = () => {
             <Row>
 
               <Col xs={12} sm={12} md={12} lg={6}>
-              <Form.Group className={`mb-3 ${styles.form_group}`}>
-                <Form.Select
-                  size="lg"
-                  value={unloaded_weight}
-                  onChange={(e) => setUnloadedWeight(e.target.value)}
-                  className={styles.form_control}
-                >
-                  <option
-                    className={styles.select_form_option}
-                    disabled
+                <Form.Group className={`mb-3 ${styles.form_group}`}>
+                  <Form.Select
+                    size="lg"
+                    value={unloaded_weight}
+                    onChange={(e) => setUnloadedWeight(e.target.value)}
+                    className={styles.form_control}
                   >
-                    Unload Vehicle Weight
-                  </option>
-                  <option
-                    className={styles.select_form_option}
-                    value={"3000"}
-                  >
-                    3000
-                  </option>
-                </Form.Select>
+                    <option
+                      className={styles.select_form_option}
+                      disabled
+                    >
+                      Unload Vehicle Weight
+                    </option>
+                    <option
+                      className={styles.select_form_option}
+                      value={"3000"}
+                    >
+                      3000
+                    </option>
+                  </Form.Select>
                 </Form.Group>
               </Col>
 
 
               <Col xs={12} sm={12} md={12} lg={6}>
                 <Form.Group className={`mb-3 ${styles.form_group}`}>
-                <Form.Select
-                  size="lg"
-                  value={axle}
-                  onChange={(e) => setAxle(e.target.value)}
-                  className={styles.form_control}
-                >
-                  <option
-                    className={styles.select_form_option}
-                    disabled
+                  <Form.Select
+                    size="lg"
+                    value={axle}
+                    onChange={(e) => setAxle(e.target.value)}
+                    className={styles.form_control}
                   >
-                    Axle
-                  </option>
-                  <option
-                    className={styles.select_form_option}
-                    value={"3000"}
-                  >
-                    3000
-                  </option>
-                </Form.Select>
+                    <option
+                      className={styles.select_form_option}
+                      disabled
+                    >
+                      Axle
+                    </option>
+                    <option
+                      className={styles.select_form_option}
+                      value={"3000"}
+                    >
+                      3000
+                    </option>
+                  </Form.Select>
                 </Form.Group>
               </Col>
             </Row>

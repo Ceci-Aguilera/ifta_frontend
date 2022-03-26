@@ -1,0 +1,58 @@
+.quarter_taxes_table_card{
+    width: 90% !important;
+    max-width: 1000px !important;
+    margin-top: 50px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 200px !important;
+    border-color: #696d71;
+    border-radius: 0px !important;
+}
+
+.quarter_taxes_table_card_header{
+    background-color: white !important;
+    border: 0px !important;
+}
+
+.quarter_taxes_table_card_header_col{
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    text-align: center !important;
+}
+
+.quarter_taxes_div_card{
+    margin-top: 50px !important;
+    border-radius: 0px !important;
+}
+
+.quarter_taxes_div_card_col{
+    text-align: center !important;
+}
+
+.quarter_taxes_div_card_span{
+    font-size: 1.2rem !important;
+    text-align: center !important;
+}
+
+.quarter_taxes_table_card_col{
+    font-size: 1.4rem !important;
+    font-weight: bold !important;
+    text-align: center !important;
+}
+
+.quarter_taxes_div_card{
+    margin-top: 50px !important;
+    border-radius: 0px !important;
+}
+
+.quarter_taxes_table_card_span_red{
+    color: #e1242b !important;
+}
+
+.quarter_taxes_card{
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border-color: #696d71;
+    border-radius: 0px !important;
+}
