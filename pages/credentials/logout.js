@@ -7,7 +7,7 @@ import {useEffect, useState} from "react"
 
 export default function Logout() {
 
-    const { auth, user, logout } = useAuth();
+    const {logout } = useAuth();
 
     useEffect(() => {
         logout();

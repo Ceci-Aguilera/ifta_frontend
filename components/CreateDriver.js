@@ -4,10 +4,12 @@ import styles from "../styles/CreateDriver.module.css";
 // import axios from "axios";
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
+import { useDrivers } from "../context/DriversContext";
 // import {AlertDanger} from "./Alerts"
 
 const CreateDriver = () => {
-    const { auth, user, addDriver } = useAuth();
+    const { auth, user } = useAuth();
+    const { addDriver } = useDrivers();
 
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");

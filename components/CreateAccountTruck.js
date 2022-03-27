@@ -4,10 +4,11 @@ import styles from "../styles/CreateAccountTruck.module.css";
 // import axios from "axios";
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
+import { useTrucks } from "../context/TrucksContext";
 // import {AlertDanger} from "./Alerts"
 
 const CreateAccountTruck = () => {
-  const { auth, user, addTruck } = useAuth();
+  const {addTruck} = useTrucks();
 
   const [truck_unit, setTruckUnit] = useState("");
   const [gross_weight, setGrossWeight] = useState("");

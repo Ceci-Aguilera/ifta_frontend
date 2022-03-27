@@ -5,6 +5,7 @@ import styles from "../../../../../styles/QuarterTaxes.module.css";
 import NextNavbar from "../../../../../components/Navbar";
 
 import { useAuth } from "../../../../../context/AuthContext";
+import { useTrucks } from "../../../../../context/TrucksContext";
 
 import { useEffect, useState } from "react";
 
@@ -17,13 +18,14 @@ const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME
 
 export default function QuarterTaxes({ year, truck_id }) {
 
-    const { auth, user, token, drivers, trucks, editTruck, deleteTruck } = useAuth();
+    const {user, token} = useAuth();
+    const {trucks} = useTrucks();
 
     const [quarters, setQuarters] = useState(null);
 
 
     useEffect(() => {
-        if (year != null && year != undefined && truck_id != null && truck_id != undefined) {
+        if (year != null && year != undefined && truck_id != null && truck_id != undefined && token != null && token != undefined) {
             async function FetchQuarters() {
 
                 const config = {

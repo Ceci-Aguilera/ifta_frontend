@@ -7,7 +7,7 @@ import { useAuth } from "../../context/AuthContext";
 
 export default function LoginFunction() {
 
-    const { auth, user, login } = useAuth();
+    const {login } = useAuth();
 
   return (
     <div className={styles.container}>

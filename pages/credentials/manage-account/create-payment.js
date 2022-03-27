@@ -13,7 +13,7 @@ import { useAuth } from "../../../context/AuthContext";
 
 export default function CreatePayment() {
 
-    const { auth, user, makePayment } = useAuth();
+    const {makePayment } = useAuth();
 
     const [card_num, setCardNum] = useState("");
     const [exp_month, setExpMonth] = useState("");

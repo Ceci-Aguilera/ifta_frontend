@@ -11,7 +11,7 @@ import {useEffect, useState} from "react";
 
 export default function AccountInfo() {
 
-    const { auth, user, edit } = useAuth();
+    const {user, edit } = useAuth();
 
     const [show_modal, setShowModal] = useState(false)
 

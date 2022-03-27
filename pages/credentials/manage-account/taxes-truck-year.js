@@ -25,7 +25,7 @@ const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME
 
 export default function TaxesTruckYear() {
 
-  const { auth, user, token, drivers, trucks, editTruck, deleteTruck } = useAuth();
+  const {user, token} = useAuth();
 
   const [year, setYear] = useState("None");
 

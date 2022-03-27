@@ -16,7 +16,7 @@ const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME
 
 export default function QuarterTaxesReport({ year, truck_id, quarter_number }) {
 
-    const { auth, user, token, drivers, trucks, editTruck, deleteTruck } = useAuth();
+    const {user, token} = useAuth();
 
     const [taxes, setTaxes] = useState(null);
     const [state_reports, setStateReports] = useState(null);

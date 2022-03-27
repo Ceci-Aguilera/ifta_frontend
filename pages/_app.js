@@ -4,14 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Layout from "../components/Layout"
 
-import { AuthProvider, getUser } from "../context/AuthContext";
+import { AuthProvider } from "../context/AuthContext";
+import { TrucksProvider } from "../context/TrucksContext";
+import { DriversProvider } from "../context/DriversContext";
 
 function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
-        <Layout>
+      <DriversProvider>
+        <TrucksProvider>
+          <Layout>
             <Component {...pageProps} />
-        </Layout>
+          </Layout>
+        </TrucksProvider>
+      </DriversProvider>
     </AuthProvider>
   );
 }

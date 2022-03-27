@@ -7,12 +7,14 @@ import AddDriverModal from "../../../components/AddDriverModal"
 import EditDriverModal from "../../../components/EditDriverModal"
 
 import { useAuth } from "../../../context/AuthContext";
+import { useDrivers } from "../../../context/DriversContext";
 
 import {useEffect, useState} from "react";
 
 export default function DriverInfo() {
 
-    const { auth, user, drivers, editDriver, deleteDriver} = useAuth();
+    const { auth, user} = useAuth();
+    const {drivers, editDriver, deleteDriver} = useDrivers();
 
     const [show_modal, setShowModal] = useState(false)
     const [show_edit_modal, setShowEditModal] = useState(false)

@@ -7,6 +7,8 @@ import AddTruckModal from "../../../components/AddTruckModal"
 import EditTruckModal from "../../../components/EditTruckModal"
 
 import { useAuth } from "../../../context/AuthContext";
+import { useDrivers } from "../../../context/DriversContext";
+import { useTrucks } from "../../../context/TrucksContext";
 
 import {useEffect, useState} from "react";
 
@@ -19,9 +21,9 @@ function customFilter(current_driver) {
 
 export default function TrucksInfo() {
 
-    const { auth, user, drivers, trucks, editTruck, deleteTruck} = useAuth();
-
-    console.log(drivers)
+    const {user} = useAuth();
+    const {drivers} = useDrivers();
+    const {trucks,  editTruck, deleteTruck} = useTrucks();
 
     const [show_modal, setShowModal] = useState(false)
     const [show_edit_modal, setShowEditModal] = useState(false)
@@ -126,7 +128,7 @@ export default function TrucksInfo() {
 
                                             <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_div_card_col}>
                                                 <span className={styles.trucks_info_div_card_span}>
-                                                    {truck.current_driver?drivers.filter(customFilter(truck.current_driver))[0]?drivers.filter(customFilter(truck.current_driver))[0].email:"None":"None"}
+                                                    {truck.current_driver?drivers?drivers.filter(customFilter(truck.current_driver))[0]?drivers.filter(customFilter(truck.current_driver))[0].email:"None":"None":"None"}
                                                 </span>
                                             </Col>
                                         </Row>
