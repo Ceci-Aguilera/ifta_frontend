@@ -1,3 +1,11 @@
+.drivers_info_alert_div{
+    width: 90% !important;
+    max-width: 1000px !important;
+    margin-top: 50px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 .drivers_info_table_card{
     width: 90% !important;
     max-width: 1000px !important;

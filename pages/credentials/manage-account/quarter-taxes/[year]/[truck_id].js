@@ -6,6 +6,7 @@ import NextNavbar from "../../../../../components/Navbar";
 
 import { useAuth } from "../../../../../context/AuthContext";
 import { useTrucks } from "../../../../../context/TrucksContext";
+import { AlertDanger } from "../../../../../components/Alerts"
 
 import { useEffect, useState } from "react";
 
@@ -18,8 +19,8 @@ const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME
 
 export default function QuarterTaxes({ year, truck_id }) {
 
-    const {user, token} = useAuth();
-    const {trucks} = useTrucks();
+    const { user, token } = useAuth();
+    const { trucks } = useTrucks();
 
     const [quarters, setQuarters] = useState(null);
 
@@ -52,8 +53,6 @@ export default function QuarterTaxes({ year, truck_id }) {
     }, [year, truck_id, token])
 
 
-    console.log(quarters)
-
     return (user == null || quarters == null) ? <div></div> : (
         <div className={styles.container}>
             <Head>
@@ -63,6 +62,10 @@ export default function QuarterTaxes({ year, truck_id }) {
             </Head>
 
             <NextNavbar />
+
+            {new Date().valueOf() > new Date(user.paid_until).valueOf() ? <div className={styles.quarter_taxes_alert_div}>
+                <AlertDanger error={"Account Inactive"} error_description={"Account is inactive as this quarter has not been purchased. To buy the service for this quarter go to Payment."} />
+            </div> : <div></div>}
 
             <main className={styles.main}>
                 <div className={styles.trucks_info_div}>
@@ -106,78 +109,81 @@ export default function QuarterTaxes({ year, truck_id }) {
                                     </Row>
                                 </Card.Header>
 
-                                <Card.Body className={styles.trucks_info_table_card_body}>
+                                {new Date().valueOf() > new Date(user.paid_until).valueOf() ? <div></div> :
 
-                                    {quarters == null ? <div></div> :
-                                        <div>
-                                            {quarters.map((quarter, index) => {
-                                                return (
-                                                    <Link key={index} href={`/credentials/manage-account/quarter-taxes-report/${year}/${truck_id}/${quarter.number}`}>
+                                    <Card.Body className={styles.trucks_info_table_card_body}>
 
-                                                        <Card className={styles.quarter_taxes_card}>
-                                                            <Card.Body className={styles.trucks_info_card_body}>
-                                                                <Row className={`${styles.quarter_taxes_table_card_row}`}>
-                                                                    <Col xs={3} sm={3} md={3} lg={3} className={styles.quarter_taxes_table_card_col}>
+                                        {quarters == null ? <div></div> :
+                                            <div>
+                                                {quarters.map((quarter, index) => {
+                                                    return (
+                                                        <Link key={index} href={`/credentials/manage-account/quarter-taxes-report/${year}/${truck_id}/${quarter.number}`}>
 
-                                                                        {(index == quarters.length - 1) ?
-                                                                            <span className={styles.quarter_taxes_table_card_span_red}>
-                                                                                QUARTER {quarter.number}
-                                                                            </span> :
-                                                                            <span className={styles.quarter_taxes_table_card_span}>
-                                                                                QUARTER {quarter.number}
-                                                                            </span>}
-                                                                    </Col>
+                                                            <Card className={styles.quarter_taxes_card}>
+                                                                <Card.Body className={styles.trucks_info_card_body}>
+                                                                    <Row className={`${styles.quarter_taxes_table_card_row}`}>
+                                                                        <Col xs={3} sm={3} md={3} lg={3} className={styles.quarter_taxes_table_card_col}>
 
-                                                                    <Col xs={2} sm={2} md={2} lg={2} className={styles.quarter_taxes_table_card_col}>
-                                                                        {(index == quarters.length - 1) ?
-                                                                            <span className={styles.quarter_taxes_table_card_span_red}>
-                                                                                {quarter.toll_miles}
-                                                                            </span> :
-                                                                            <span className={styles.quarter_taxes_table_card_span}>
-                                                                                {quarter.toll_miles}
-                                                                            </span>}
-                                                                    </Col>
+                                                                            {(index == quarters.length - 1) ?
+                                                                                <span className={styles.quarter_taxes_table_card_span_red}>
+                                                                                    QUARTER {quarter.number}
+                                                                                </span> :
+                                                                                <span className={styles.quarter_taxes_table_card_span}>
+                                                                                    QUARTER {quarter.number}
+                                                                                </span>}
+                                                                        </Col>
 
-                                                                    <Col xs={2} sm={2} md={2} lg={2} className={styles.quarter_taxes_table_card_col}>
-                                                                        {(index == quarters.length - 1) ?
-                                                                            <span className={styles.quarter_taxes_table_card_span_red}>
-                                                                                {quarter.fuel_gallons}
-                                                                            </span> :
-                                                                            <span className={styles.quarter_taxes_table_card_span}>
-                                                                                {quarter.fuel_gallons}
-                                                                            </span>}
-                                                                    </Col>
+                                                                        <Col xs={2} sm={2} md={2} lg={2} className={styles.quarter_taxes_table_card_col}>
+                                                                            {(index == quarters.length - 1) ?
+                                                                                <span className={styles.quarter_taxes_table_card_span_red}>
+                                                                                    {quarter.toll_miles}
+                                                                                </span> :
+                                                                                <span className={styles.quarter_taxes_table_card_span}>
+                                                                                    {quarter.toll_miles}
+                                                                                </span>}
+                                                                        </Col>
 
-                                                                    <Col xs={2} sm={2} md={2} lg={2} className={styles.quarter_taxes_table_card_col}>
-                                                                        {(index == quarters.length - 1) ?
-                                                                            <span className={styles.quarter_taxes_table_card_span_red}>
-                                                                                {quarter.mpg}
-                                                                            </span> :
-                                                                            <span className={styles.quarter_taxes_table_card_span}>
-                                                                                {quarter.mpg}
-                                                                            </span>}
-                                                                    </Col>
+                                                                        <Col xs={2} sm={2} md={2} lg={2} className={styles.quarter_taxes_table_card_col}>
+                                                                            {(index == quarters.length - 1) ?
+                                                                                <span className={styles.quarter_taxes_table_card_span_red}>
+                                                                                    {quarter.fuel_gallons}
+                                                                                </span> :
+                                                                                <span className={styles.quarter_taxes_table_card_span}>
+                                                                                    {quarter.fuel_gallons}
+                                                                                </span>}
+                                                                        </Col>
 
-                                                                    <Col xs={2} sm={2} md={2} lg={2} className={styles.quarter_taxes_table_card_col}>
-                                                                        {(index == quarters.length - 1) ?
-                                                                            <span className={styles.quarter_taxes_table_card_span_red}>
-                                                                                ${quarter.fuel_tax_owned}
-                                                                            </span> :
-                                                                            <span className={styles.quarter_taxes_table_card_span}>
-                                                                                ${quarter.fuel_tax_owned}
-                                                                            </span>}
-                                                                    </Col>
-                                                                </Row>
-                                                            </Card.Body>
-                                                        </Card>
-                                                    </Link>
+                                                                        <Col xs={2} sm={2} md={2} lg={2} className={styles.quarter_taxes_table_card_col}>
+                                                                            {(index == quarters.length - 1) ?
+                                                                                <span className={styles.quarter_taxes_table_card_span_red}>
+                                                                                    {quarter.mpg}
+                                                                                </span> :
+                                                                                <span className={styles.quarter_taxes_table_card_span}>
+                                                                                    {quarter.mpg}
+                                                                                </span>}
+                                                                        </Col>
 
-                                                )
-                                            })}
-                                        </div>
-                                    }
+                                                                        <Col xs={2} sm={2} md={2} lg={2} className={styles.quarter_taxes_table_card_col}>
+                                                                            {(index == quarters.length - 1) ?
+                                                                                <span className={styles.quarter_taxes_table_card_span_red}>
+                                                                                    ${quarter.fuel_tax_owned}
+                                                                                </span> :
+                                                                                <span className={styles.quarter_taxes_table_card_span}>
+                                                                                    ${quarter.fuel_tax_owned}
+                                                                                </span>}
+                                                                        </Col>
+                                                                    </Row>
+                                                                </Card.Body>
+                                                            </Card>
+                                                        </Link>
 
-                                </Card.Body>
+                                                    )
+                                                })}
+                                            </div>
+                                        }
+
+                                    </Card.Body>
+                                }
                             </Card>
                         </div>
                     )

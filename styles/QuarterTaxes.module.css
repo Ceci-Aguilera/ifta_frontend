@@ -1,3 +1,11 @@
+.quarter_taxes_alert_div{
+    width: 90% !important;
+    max-width: 1000px !important;
+    margin-top: 50px !important;
+    margin-left: auto !important;
+    margin-right: auto !important; 
+}
+
 .quarter_taxes_table_card{
     width: 90% !important;
     max-width: 1000px !important;

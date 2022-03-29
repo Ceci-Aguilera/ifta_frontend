@@ -9,6 +9,7 @@ import EditTruckModal from "../../../components/EditTruckModal"
 import { useAuth } from "../../../context/AuthContext";
 import { useDrivers } from "../../../context/DriversContext";
 import { useTrucks } from "../../../context/TrucksContext";
+import { AlertDanger } from "../../../components/Alerts"
 
 import {useEffect, useState} from "react";
 
@@ -59,6 +60,12 @@ export default function TrucksInfo() {
         <div className={styles.trucks_info_div}>
         {(trucks !== null)?(
             <div>
+
+                
+            {new Date().valueOf() > new Date(user.paid_until).valueOf() ? <div className={styles.trucks_info_alert_div}>
+                        <AlertDanger error={"Account Inactive"} error_description={"Account is inactive as this quarter has not been purchased. To buy the service for this quarter go to Payment."} />
+                    </div> : <div></div>}
+
                 <Card className={styles.trucks_info_table_card}>
                     <Card.Header className={styles.trucks_info_table_card_header}>
                         <Row className={styles.trucks_info_table_card_header_row}>
@@ -169,19 +176,20 @@ export default function TrucksInfo() {
             </div>
         )
         :<div></div>}
-
+        {new Date().valueOf() > new Date(user.paid_until).valueOf() ?<div></div>:
             <div className={styles.trucks_info_button_div}>
                 <Button variant="danger" className={styles.trucks_info_button} onClick={(e) => setShowModal(true)}>
                     Add Truck
                 </Button>
             </div>
+        }
 
 
         </div>
 
         <AddTruckModal show_modal={show_modal} close_modal={handleCloseModal} />
 
-        {(selected_truck != null)?
+        {(selected_truck != null && new Date().valueOf() <= new Date(user.paid_until).valueOf())?
             <EditTruckModal truck={selected_truck} drivers={drivers} editModal={editTruck} show_modal={show_edit_modal} close_modal={handleCloseEditModal} />
         :<div></div>}
 
