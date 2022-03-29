@@ -12,7 +12,7 @@ function AddDriverModal({show_modal, close_modal}){
         <div className="account_edit_info_modal_div">
             <Modal show={show_modal} onHide={close_modal} className="edit-modal">
                 <Modal.Header closeVariant="white" closeButton className="edit-modal-header">
-                    <Modal.Title className="edit-modal-title">EDIT INFO</Modal.Title>
+                    <Modal.Title className="edit-modal-title">Add New Driver</Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body className="edit-modal-body">
@@ -28,9 +28,6 @@ function AddDriverModal({show_modal, close_modal}){
                    onClick={close_modal}
                  >
                    Close
-                 </Button>
-                 <Button variant="primary" className="edit-modal-save-button" onClick={(e) => onEditAccountHelper(e)}>
-                   Save changes
                  </Button>
                </Modal.Footer>
 

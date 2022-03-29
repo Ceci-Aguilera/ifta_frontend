@@ -1,3 +1,20 @@
+.table{
+    width:90% !important;
+    max-width:1500px !important;
+    margin-top: 50px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 50px !important;
+}
+
+.save_pdf_button_div{
+    margin-top: 50px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 200px !important;
+    text-align: center !important;
+}
+
 .save_pdf_button{
     width: 250px !important;
     height: 50px !important;

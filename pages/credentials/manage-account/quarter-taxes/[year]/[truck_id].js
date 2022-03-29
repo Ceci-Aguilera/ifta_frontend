@@ -122,7 +122,7 @@ export default function QuarterTaxes({ year, truck_id }) {
                                                             <Card className={styles.quarter_taxes_card}>
                                                                 <Card.Body className={styles.trucks_info_card_body}>
                                                                     <Row className={`${styles.quarter_taxes_table_card_row}`}>
-                                                                        <Col xs={3} sm={3} md={3} lg={3} className={styles.quarter_taxes_table_card_col}>
+                                                                        <Col xs={12} sm={12} md={12} lg={3} className={styles.quarter_taxes_table_card_col}>
 
                                                                             {(index == quarters.length - 1) ?
                                                                                 <span className={styles.quarter_taxes_table_card_span_red}>
@@ -133,43 +133,59 @@ export default function QuarterTaxes({ year, truck_id }) {
                                                                                 </span>}
                                                                         </Col>
 
-                                                                        <Col xs={2} sm={2} md={2} lg={2} className={styles.quarter_taxes_table_card_col}>
+                                                                        <Col xs={12} sm={12} md={12} lg={2} className={styles.quarter_taxes_table_card_col}>
                                                                             {(index == quarters.length - 1) ?
                                                                                 <span className={styles.quarter_taxes_table_card_span_red}>
-                                                                                    {quarter.toll_miles}
+                                                                                    <span className={styles.drivers_info_div_card_header_span}>
+                                                                                        TOLL MILES
+                                                                                    </span>     {quarter.toll_miles}
                                                                                 </span> :
                                                                                 <span className={styles.quarter_taxes_table_card_span}>
-                                                                                    {quarter.toll_miles}
+                                                                                    <span className={styles.drivers_info_div_card_header_span}>
+                                                                                        TOLL MILES
+                                                                                    </span>      {quarter.toll_miles}
                                                                                 </span>}
                                                                         </Col>
 
-                                                                        <Col xs={2} sm={2} md={2} lg={2} className={styles.quarter_taxes_table_card_col}>
+                                                                        <Col xs={12} sm={12} md={12} lg={2} className={styles.quarter_taxes_table_card_col}>
                                                                             {(index == quarters.length - 1) ?
                                                                                 <span className={styles.quarter_taxes_table_card_span_red}>
-                                                                                    {quarter.fuel_gallons}
+                                                                                    <span className={styles.drivers_info_div_card_header_span}>
+                                                                                        GALLONS:
+                                                                                    </span>    {quarter.fuel_gallons}
                                                                                 </span> :
                                                                                 <span className={styles.quarter_taxes_table_card_span}>
-                                                                                    {quarter.fuel_gallons}
+                                                                                    <span className={styles.drivers_info_div_card_header_span}>
+                                                                                        GALLONS:
+                                                                                    </span>                    {quarter.fuel_gallons}
                                                                                 </span>}
                                                                         </Col>
 
-                                                                        <Col xs={2} sm={2} md={2} lg={2} className={styles.quarter_taxes_table_card_col}>
+                                                                        <Col xs={12} sm={12} md={12} lg={2} className={styles.quarter_taxes_table_card_col}>
                                                                             {(index == quarters.length - 1) ?
                                                                                 <span className={styles.quarter_taxes_table_card_span_red}>
-                                                                                    {quarter.mpg}
+                                                                                    <span className={styles.drivers_info_div_card_header_span}>
+                                                                                        MPG
+                                                                                    </span>           {quarter.mpg}
                                                                                 </span> :
                                                                                 <span className={styles.quarter_taxes_table_card_span}>
-                                                                                    {quarter.mpg}
+                                                                                    <span className={styles.drivers_info_div_card_header_span}>
+                                                                                        MPG
+                                                                                    </span>            {quarter.mpg}
                                                                                 </span>}
                                                                         </Col>
 
-                                                                        <Col xs={2} sm={2} md={2} lg={2} className={styles.quarter_taxes_table_card_col}>
+                                                                        <Col xs={12} sm={12} md={12} lg={2} className={styles.quarter_taxes_table_card_col}>
                                                                             {(index == quarters.length - 1) ?
                                                                                 <span className={styles.quarter_taxes_table_card_span_red}>
-                                                                                    ${quarter.fuel_tax_owned}
+                                                                                    <span className={styles.drivers_info_div_card_header_span}>
+                                                                                        IFTA TAXES
+                                                                                    </span>                        ${parseFloat(quarter.fuel_tax_owned).toFixed(2)}
                                                                                 </span> :
                                                                                 <span className={styles.quarter_taxes_table_card_span}>
-                                                                                    ${quarter.fuel_tax_owned}
+                                                                                    <span className={styles.drivers_info_div_card_header_span}>
+                                                                                        IFTA TAXES
+                                                                                    </span>                      ${parseFloat(quarter.fuel_tax_owned).toFixed(2)}
                                                                                 </span>}
                                                                         </Col>
                                                                     </Row>

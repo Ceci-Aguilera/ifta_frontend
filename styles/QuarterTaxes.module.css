@@ -64,3 +64,26 @@
     border-color: #696d71;
     border-radius: 0px !important;
 }
+
+.taxes_truck_year_info_div{
+    width: 90% !important;
+    max-width: 1000px !important;
+    margin-top: 50px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 200px !important;
+}
+
+.drivers_info_div_card_header_span{
+    display: none !important;
+}
+
+@media screen and (max-width: 578px){
+    .quarter_taxes_table_card_header_col{
+        display: none;
+    }
+
+    .drivers_info_div_card_header_span{
+        display: inline-block !important;
+    }
+}

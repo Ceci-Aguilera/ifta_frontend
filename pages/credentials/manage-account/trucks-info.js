@@ -109,32 +109,42 @@ export default function TrucksInfo() {
                                     <Card.Body className={styles.trucks_info_div_card_body}>
 
                                         <Row className={styles.trucks_info_div_card_row}>
-                                            <Col xs={2} sm={2} md={2} lg={2} className={styles.trucks_info_div_card_col}>
-                                                <span className={styles.trucks_info_div_card_span}>
+                                            <Col xs={12} sm={12} md={12} lg={2} className={styles.trucks_info_div_card_col}>
+                                               <span className={styles.trucks_info_div_card_header_span}>
+                                                   Truck Unit:
+                                               </span> <span className={styles.trucks_info_div_card_span}>
                                                     {truck.truck_unit}
                                                 </span>
                                             </Col>
 
-                                            <Col xs={2} sm={2} md={2} lg={2} className={styles.trucks_info_div_card_col}>
-                                                <span className={styles.trucks_info_div_card_span}>
+                                            <Col xs={12} sm={12} md={12} lg={2} className={styles.trucks_info_div_card_col}>
+                                            <span className={styles.trucks_info_div_card_header_span}>
+                                                  License Plate No:
+                                               </span> <span className={styles.trucks_info_div_card_span}>
                                                     {truck.license_plate_no}
                                                 </span>
                                             </Col>
 
-                                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_div_card_col}>
-                                                <span className={styles.trucks_info_div_card_span}>
+                                            <Col xs={12} sm={12} md={12}  lg={3} className={styles.trucks_info_div_card_col}>
+                                            <span className={styles.trucks_info_div_card_header_span}>
+                                                   Fleet Name:
+                                               </span><span className={styles.trucks_info_div_card_span}>
                                                     {truck.fleet_name}
                                                 </span>
                                             </Col>
 
-                                            <Col xs={2} sm={2} md={2} lg={2} className={styles.trucks_info_div_card_col}>
-                                                <span className={styles.trucks_info_div_card_span}>
+                                            <Col xs={12} sm={12} md={12} lg={2} className={styles.trucks_info_div_card_col}>
+                                            <span className={styles.trucks_info_div_card_header_span}>
+                                                   Fleet Vehicle Number:
+                                               </span> <span className={styles.trucks_info_div_card_span}>
                                                     {truck.vehicle_fleet_no}
                                                 </span>
                                             </Col>
 
-                                            <Col xs ={3} sm={3} md={3} lg={3} className={styles.trucks_info_div_card_col}>
-                                                <span className={styles.trucks_info_div_card_span}>
+                                            <Col xs={12} sm={12} md={12} lg={3} className={styles.trucks_info_div_card_col}>
+                                            <span className={styles.trucks_info_div_card_header_span}>
+                                                   Driver Email:
+                                               </span> <span className={styles.trucks_info_div_card_span}>
                                                     {truck.current_driver?drivers?drivers.filter(customFilter(truck.current_driver))[0]?drivers.filter(customFilter(truck.current_driver))[0].email:"None":"None":"None"}
                                                 </span>
                                             </Col>

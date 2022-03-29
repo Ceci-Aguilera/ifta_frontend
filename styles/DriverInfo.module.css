@@ -12,7 +12,7 @@
     margin-top: 50px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    margin-bottom: 200px !important;
+    margin-bottom: 50px !important;
     border-color: #696d71;
     border-radius: 0px !important;
 }
@@ -49,12 +49,73 @@
 
 .drivers_info_card_button{
     width: 250px !important;
+    background-color: #e1242b !important;
+    border-radius: 0px;
     font-size: 1.2rem !important;
     text-align: center !important;
 }
 
 .drivers_info_delete_button{
     width: 250px !important;
+    background-color: #e1242b !important;
+    border-radius: 0px;
     font-size: 1.2rem !important;
     text-align: center !important;
+}
+
+.drivers_info_card_button:hover,
+.drivers_info_card_button:active,
+.drivers_info_card_button:after,
+.drivers_info_card_button:focus{
+    background-color: #85181b !important;
+}
+
+.drivers_info_delete_button:hover,
+.drivers_info_delete_button:active,
+.drivers_info_delete_button:after,
+.drivers_info_delete_button:focus{
+    background-color: #85181b !important;
+}
+
+
+.trucks_info_button_div{
+    margin-top: 50px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 200px !important;
+    text-align: center !important;
+}
+
+.drivers_info_button{
+    width: 250px !important;
+    background-color: #e1242b !important;
+    border-radius: 0px;
+    font-size: 1.2rem !important;
+}
+
+.drivers_info_button:hover,
+.drivers_info_button:active,
+.drivers_info_button:after,
+.drivers_info_button:focus{
+    background-color: #85181b !important;
+}
+
+
+@media screen and (max-width: 578px){
+    .drivers_info_table_card_header_col{
+        display: none !important;
+    }
+    
+    .drivers_info_div_card_header_span{
+        display: inline-block !important;
+        font-weight: bold;
+    }
+
+    .drivers_info_card_button{
+        width: 100px !important;
+    }
+
+    .drivers_info_delete_button{
+        width: 100px !important;
+    }
 }

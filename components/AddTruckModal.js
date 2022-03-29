@@ -9,13 +9,13 @@ function AddTruckModal({show_modal, close_modal}){
 
 
     return(
-        <div className="account_edit_info_modal_div">
-            <Modal show={show_modal} onHide={close_modal} className="edit-modal">
+        <div className={styles.account_edit_info_modal_div}>
+            <Modal show={show_modal} onHide={close_modal} className="edit_modal" size="lg">
                 <Modal.Header closeVariant="white" closeButton className="edit-modal-header">
-                    <Modal.Title className="edit-modal-title">EDIT INFO</Modal.Title>
+                    <Modal.Title className="edit-modal-title">Add New Truck</Modal.Title>
                 </Modal.Header>
 
-                <Modal.Body className="edit-modal-body">
+                <Modal.Body className="edit_modal_body">
 
                     <CreateAccountTruck />
 
@@ -28,9 +28,6 @@ function AddTruckModal({show_modal, close_modal}){
                    onClick={close_modal}
                  >
                    Close
-                 </Button>
-                 <Button variant="primary" className="edit-modal-save-button" onClick={(e) => onEditAccountHelper(e)}>
-                   Save changes
                  </Button>
                </Modal.Footer>
 
