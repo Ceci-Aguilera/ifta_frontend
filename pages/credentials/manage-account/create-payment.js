@@ -13,7 +13,7 @@ import { useAuth } from "../../../context/AuthContext";
 
 export default function CreatePayment() {
 
-    const {makePayment } = useAuth();
+    const {user, makePayment } = useAuth();
 
     const [card_num, setCardNum] = useState("");
     const [exp_month, setExpMonth] = useState("");
@@ -32,7 +32,7 @@ export default function CreatePayment() {
         await makePayment(body)
     }
 
-  return (
+  return (user == null)? <div></div>:(
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
@@ -44,6 +44,7 @@ export default function CreatePayment() {
 
       <main className={styles.main}>
 
+      {new Date().valueOf() > new Date(user.paid_until).valueOf() ?
       <div className={styles.main_div}>
         <Card className={styles.form_card}>
             <Card.Header className={styles.form_card_header}>
@@ -118,7 +119,18 @@ export default function CreatePayment() {
                 </div>
             </Card.Footer>
         </Card>
-      </div>
+      </div>:
+        <div>
+        <Card className={styles.form_card}>
+
+            <Card.Body className={styles.form_card_body}>
+              <p>
+                This quarter has already been paid
+              </p>
+            </Card.Body>
+          </Card>
+        </div>
+      }
 
       </main>
     </div>
