@@ -148,7 +148,7 @@ export const AuthProvider = ({ children }) => {
       const edit_url = `${domain}/user-account/edit-info`
 
       return axios.post(edit_url, body, config).then(async (response) => {
-        const res = await response.data
+        window.location.reload(false);
     }).catch(async (error) => {
         console.log(error);
     })

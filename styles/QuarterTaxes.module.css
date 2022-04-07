@@ -63,6 +63,7 @@
     margin-right: auto !important;
     border-color: #696d71;
     border-radius: 0px !important;
+    cursor: pointer !important;
 }
 
 .taxes_truck_year_info_div{
@@ -76,6 +77,23 @@
 
 .drivers_info_div_card_header_span{
     display: none !important;
+}
+
+.tax_truck_div{
+    margin-top: 50px !important;
+}
+
+
+.tax_truck_div, .tax_truck_icon, .tax_truck_p{
+    display: inline-block !important;
+}
+
+.tax_truck_p{
+    font-size: 1.2rem !important;
+}
+
+.tax_truck_span{
+    font-weight: bold !important;
 }
 
 @media screen and (max-width: 578px){

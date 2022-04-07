@@ -97,33 +97,25 @@ export default function DriverInfo() {
 
                                                     <Row className={styles.drivers_info_div_card_row}>
                                                         <Col xs={12} sm={12} md={12}  lg={3} className={styles.drivers_info_div_card_col}>
-                                                        <span className={styles.drivers_info_div_card_header_span}>
-                                                   Truck Unit:
-                                               </span> <span className={styles.drivers_info_div_card_span}>
+                                                       <span className={styles.drivers_info_div_card_span}>
                                                                 {driver.email}
                                                             </span>
                                                         </Col>
 
                                                         <Col xs={12} sm={12} md={12} lg={3} className={styles.drivers_info_div_card_col}>
-                                                        <span className={styles.drivers_info_div_card_header_span}>
-                                                   Truck Unit:
-                                               </span>  <span className={styles.drivers_info_div_card_span}>
+                                                         <span className={styles.drivers_info_div_card_span}>
                                                                 {driver.first_name}
                                                             </span>
                                                         </Col>
 
                                                         <Col xs={12} sm={12} md={12}  lg={3} className={styles.drivers_info_div_card_col}>
-                                                        <span className={styles.drivers_info_div_card_header_span}>
-                                                   Truck Unit:
-                                               </span>   <span className={styles.drivers_info_div_card_span}>
+                                                         <span className={styles.drivers_info_div_card_span}>
                                                                 {driver.last_name}
                                                             </span>
                                                         </Col>
 
                                                         <Col xs={12} sm={12} md={12}  lg={3} className={styles.drivers_info_div_card_col}>
-                                                        <span className={styles.drivers_info_div_card_header_span}>
-                                                   Truck Unit:
-                                               </span>  <span className={styles.drivers_info_div_card_span}>
+                                                       <span className={styles.drivers_info_div_card_span}>
                                                                 {driver.cdl_no}
                                                             </span>
                                                         </Col>

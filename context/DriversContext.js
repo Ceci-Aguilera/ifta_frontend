@@ -83,7 +83,7 @@ export const DriversProvider = ({ children }) => {
         return await axios
             .post(driver_url, body, config)
             .then(async (response) => {
-                const res = await response.data;
+                window.location.reload(false);
             })
             .catch(async (error) => {
                 setLoading(false);
@@ -105,7 +105,7 @@ export const DriversProvider = ({ children }) => {
         const driver_url = `${domain}/user-account/edit-driver/${driver_id}`
 
         return axios.post(driver_url, body, config).then(async (response) => {
-            const res = await response.data
+            window.location.reload(false);
         }).catch(async (error) => {
             console.log(error);
         })
@@ -124,7 +124,7 @@ export const DriversProvider = ({ children }) => {
         const driver_url = `${domain}/user-account/edit-driver/${driver_id}`
 
         return axios.delete(driver_url, config).then(async (response) => {
-            const res = await response.data
+            window.location.reload(false);
         }).catch(async (error) => {
             console.log(error);
         })

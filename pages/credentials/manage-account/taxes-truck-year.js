@@ -12,6 +12,8 @@ import { useAuth } from "../../../context/AuthContext";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+import { TruckFront } from "../../../components/Icons"
+
 
 
 const years = ["2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"]
@@ -25,7 +27,7 @@ const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME
 
 export default function TaxesTruckYear() {
 
-  const {user, token} = useAuth();
+  const { user, token } = useAuth();
 
   const [year, setYear] = useState("None");
 
@@ -103,8 +105,15 @@ export default function TaxesTruckYear() {
                 {tax_trucks.map((tax_truck, index) => {
                   return (
                     <Link key={index} href={`/credentials/manage-account/quarter-taxes/${year}/${tax_truck.id}`}>
-                      <a>
-                        {tax_truck.license_plate_no}
+                      <a className={styles.tax_truck_a}>
+                        <div className={styles.tax_truck_div}>
+                          <TruckFront height={100} width={100} className={styles.tax_truck_icon} /> <p className={styles.tax_truck_p}>
+                            <span className={styles.tax_truck_span}>
+                              Plate:
+                            </span>
+                            {tax_truck.license_plate_no}
+                          </p>
+                        </div>
                       </a>
                     </Link>
                   )

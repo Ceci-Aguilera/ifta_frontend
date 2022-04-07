@@ -80,7 +80,7 @@ const addTruck = async(body) => {
     const truck_url = `${domain}/user-account/create-truck`
 
     return axios.post(truck_url, body, config).then(async (response) => {
-      const res = await response.data
+      window.location.reload(false);
   }).catch(async (error) => {
       console.log(error);
   })
@@ -101,7 +101,7 @@ const editTruck = async(truck_id, body) => {
     const truck_url = `${domain}/user-account/edit-truck/${truck_id}`
 
     return axios.post(truck_url, body, config).then(async (response) => {
-      const res = await response.data
+      window.location.reload(false);
   }).catch(async (error) => {
       console.log(error);
   })
@@ -121,7 +121,7 @@ const deleteTruck = async(truck_id) => {
     const truck_url = `${domain}/user-account/edit-truck/${truck_id}`
 
     return axios.delete(truck_url, config).then(async (response) => {
-      const res = await response.data
+      window.location.reload(false);
   }).catch(async (error) => {
       console.log(error);
   })
