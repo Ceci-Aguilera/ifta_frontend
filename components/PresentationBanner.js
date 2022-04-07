@@ -45,10 +45,28 @@ export default function PresentationBanner() {
                   src={login_icon}
                   alt="Login Icon"
                   className={styles.banner_login_icon}
-                  width={75}
-                  height={75}
+                  width={100}
+                  height={100}
                 />
               </Link>
+
+              <Row className={`${styles.app_row} ${styles.app_row_second}`}>
+                <Col xs={6} sm={6} md={6} lg={6} className={styles.app_col}>
+                  <Image
+                    src={iphone_icon}
+                    alt="Ifta IPhone App"
+                    className={styles.iphone_icon_img}
+                  />
+                </Col>
+
+                <Col xs={6} sm={6} md={6} lg={6} className={styles.app_col}>
+                  <Image
+                    src={android_icon}
+                    alt="Ifta Android App"
+                    className={styles.iphone_icon_img}
+                  />
+                </Col>
+              </Row>
               </div>
             </Col>
 

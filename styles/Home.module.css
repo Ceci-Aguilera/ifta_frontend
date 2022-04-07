@@ -272,6 +272,11 @@
         text-align:center !important;
     }
 
+    .simple_banner_features_extra_row_second_row{
+        margin-top: 0px !important;
+        margin-bottom: 50px !important;
+    }
+
     .simple_banner_features_extra_col{
         margin-left: auto !important;
         margin-right: auto !important;

@@ -106,6 +106,10 @@
     cursor: pointer;
 }
 
+.app_row_second{
+    display:none !important;
+}
+
 @media screen and (max-width:578px){
     .banner_app_col{
         display: none !important;
@@ -132,5 +136,14 @@
 
     .banner_h2{
         font-size: 40px !important;
+    }
+
+    .app_row_second{
+        display:block !important;
+    }
+
+    .app_col{
+        display: inline-block !important;
+        padding-top: 50px !important;
     }
 }

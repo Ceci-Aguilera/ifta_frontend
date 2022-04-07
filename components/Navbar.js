@@ -9,7 +9,7 @@ export default function NextNavbar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className={styles.navbar}>
       <Container className={styles.container}>
-        <Navbar.Brand href="#home"  className={styles.navbar_brand}>
+        <Navbar.Brand href="/"  className={styles.navbar_brand}>
           <Image
             src={ifta_logo}
             alt="Ifta Now Logo"

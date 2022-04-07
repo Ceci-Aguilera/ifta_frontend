@@ -10,6 +10,7 @@ import { useAuth } from "../../../context/AuthContext";
 import { useDrivers } from "../../../context/DriversContext";
 import { useTrucks } from "../../../context/TrucksContext";
 import { AlertDanger } from "../../../components/Alerts"
+import {TruckFront} from "../../../components/Icons"
 
 import {useEffect, useState} from "react";
 
@@ -66,6 +67,8 @@ export default function TrucksInfo() {
                         <AlertDanger error={"Account Inactive"} error_description={"Account is inactive as this quarter has not been purchased. To buy the service for this quarter go to Payment."} />
                     </div> : <div></div>}
 
+                    
+
                 <Card className={styles.trucks_info_table_card}>
                     <Card.Header className={styles.trucks_info_table_card_header}>
                         <Row className={styles.trucks_info_table_card_header_row}>
@@ -99,6 +102,8 @@ export default function TrucksInfo() {
                                 </span>
                             </Col>
                         </Row>
+
+                        <h1 className={styles.trucks_info_h1}>TRUCKS</h1>
                     </Card.Header>
 
                     <Card.Body className={styles.trucks_info_table_card_body}>
@@ -107,6 +112,8 @@ export default function TrucksInfo() {
                             return (
                                 <Card key={index} className={styles.trucks_info_div_card}>
                                     <Card.Body className={styles.trucks_info_div_card_body}>
+
+                                        <TruckFront width={100} height={100} className={styles.truck_info_card_icon}/>
 
                                         <Row className={styles.trucks_info_div_card_row}>
                                             <Col xs={12} sm={12} md={12} lg={2} className={styles.trucks_info_div_card_col}>
@@ -154,22 +161,22 @@ export default function TrucksInfo() {
 
                                     <Card.Footer className={styles.trucks_info_div_card_footer}>
 
-                                        <Row className={styles.trucks_info_div_card_row}>
-                                            <Col xs ={6} sm={6} md={6} lg={6} className={styles.trucks_info_div_card_col}>
+                                        <Row className={`${styles.trucks_info_div_card_row} ${styles.trucks_info_div_button_row}`}>
+                                            <Col xs ={6} sm={6} md={6} lg={6} className={`${styles.trucks_info_div_card_col} ${styles.trucks_info_div_button_col}`}>
 
                                                 <div className={styles.truck_info_card_button_div}>
                                                     <Button variant="danger" className={styles.trucks_info_card_button} onClick={(e) => onSelectTruck(e, truck)}>
-                                                        Edit
+                                                        EDIT
                                                     </Button>
                                                 </div>
 
                                             </Col>
 
-                                            <Col xs ={6} sm={6} md={6} lg={6} className={styles.trucks_info_div_card_col}>
+                                            <Col xs ={6} sm={6} md={6} lg={6} className={`${styles.trucks_info_div_card_col} ${styles.trucks_info_div_button_col}`}>
 
                                                 <div className={styles.trucks_info_delete_button_div}>
                                                     <Button variant="danger" className={styles.trucks_info_delete_button} onClick={(e) => onDelete(e, truck)}>
-                                                        Delete
+                                                        DELETE
                                                     </Button>
                                                 </div>
 
@@ -189,7 +196,7 @@ export default function TrucksInfo() {
         {new Date().valueOf() > new Date(user.paid_until).valueOf() ?<div></div>:
             <div className={styles.trucks_info_button_div}>
                 <Button variant="danger" className={styles.trucks_info_button} onClick={(e) => setShowModal(true)}>
-                    Add Truck
+                    ADD TRUCK
                 </Button>
             </div>
         }

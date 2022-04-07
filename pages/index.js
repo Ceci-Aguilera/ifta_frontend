@@ -1,6 +1,7 @@
 import { Button, Row, Col, Container } from "react-bootstrap";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import PresentationBanner from "../components/PresentationBanner";
 import styles from "../styles/Home.module.css";
 
@@ -61,9 +62,11 @@ export default function Home() {
           </p>
 
           <div className={styles.start_now_button_div}>
-            <Button variant="danger" className={styles.start_now_button}>
+            <Link href={'/credentials/register/create-account'}>
+              <Button variant="danger" className={styles.start_now_button}>
               START NOW
             </Button>
+            </Link>
           </div>
         </div>
 
@@ -242,9 +245,11 @@ export default function Home() {
           </Container>
 
           <div className={styles.step_section_button_div}>
+          <Link href={'/credentials/register/create-account'}>
             <Button variant="danger" className={styles.step_section_button}>
               START NOW
             </Button>
+            </Link>
           </div>
         </div>
 
@@ -278,7 +283,7 @@ export default function Home() {
                 md={12}
                 lg={6}
               >
-                <Row className={styles.simple_banner_features_extra_row}>
+                <Row className={`${styles.simple_banner_features_extra_row} ${styles.simple_banner_features_extra_row_second_row}`}>
                   <Col
                     className={styles.simple_banner_features_extra_col}
                     xs={12}

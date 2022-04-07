@@ -104,4 +104,8 @@
     .drivers_info_div_card_header_span{
         display: inline-block !important;
     }
+
+    .quarter_taxes_card{
+        margin-bottom:50px !important;
+    }
 }

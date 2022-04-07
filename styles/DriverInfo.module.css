@@ -1,6 +1,6 @@
 .drivers_info_alert_div{
     width: 90% !important;
-    max-width: 1000px !important;
+    max-width: 1100px !important;
     margin-top: 50px !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -8,7 +8,7 @@
 
 .drivers_info_table_card{
     width: 90% !important;
-    max-width: 1000px !important;
+    max-width: 1100px !important;
     margin-top: 50px !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -34,6 +34,8 @@
 }
 
 .drivers_info_div_card_col{
+    margin-left: auto !important;
+    margin-right: auto !important;
     text-align: center !important;
 }
 
@@ -52,6 +54,7 @@
     background-color: #e1242b !important;
     border-radius: 0px;
     font-size: 1.2rem !important;
+    font-weight: bold !important;
     text-align: center !important;
 }
 
@@ -60,6 +63,7 @@
     background-color: #e1242b !important;
     border-radius: 0px;
     font-size: 1.2rem !important;
+    font-weight: bold !important;
     text-align: center !important;
 }
 
@@ -91,6 +95,7 @@
     background-color: #e1242b !important;
     border-radius: 0px;
     font-size: 1.2rem !important;
+    font-weight: bold !important;
 }
 
 .drivers_info_button:hover,
@@ -100,6 +105,13 @@
     background-color: #85181b !important;
 }
 
+.drivers_info_h1 {
+    display: none !important;
+}
+
+.drivers_info_div_card_header_span{
+    display: none !important;
+}
 
 @media screen and (max-width: 578px){
     .drivers_info_table_card_header_col{
@@ -118,4 +130,23 @@
     .drivers_info_delete_button{
         width: 100px !important;
     }
+
+    .drivers_info_h1 {
+        display: block !important;
+        margin-top: 30px !important;
+        font-weight: bold !important;
+        text-align: center !important;
+      }
+
+      .drivers_info_div_card_col {
+        text-align: start !important;
+      }
+
+      .drivers_info_div_button_row{
+          text-align: center !important;
+      }
+
+      .trucks_info_div_button_col{
+        text-align: center !important;
+      }
 }

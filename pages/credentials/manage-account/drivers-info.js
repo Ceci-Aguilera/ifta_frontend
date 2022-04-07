@@ -84,6 +84,8 @@ export default function DriverInfo() {
                                             </span>
                                         </Col>
                                     </Row>
+
+                                    <h1 className={styles.drivers_info_h1}>DRIVERS</h1>
                                 </Card.Header>
 
 
@@ -96,26 +98,34 @@ export default function DriverInfo() {
                                                 <Card.Body className={styles.drivers_info_div_card_body}>
 
                                                     <Row className={styles.drivers_info_div_card_row}>
-                                                        <Col xs={12} sm={12} md={12}  lg={3} className={styles.drivers_info_div_card_col}>
-                                                       <span className={styles.drivers_info_div_card_span}>
+                                                        <Col xs={12} sm={12} md={12} lg={3} className={styles.drivers_info_div_card_col}>
+                                                            <span className={styles.drivers_info_div_card_header_span}>
+                                                                Email:
+                                                            </span>{" "}<span className={styles.drivers_info_div_card_span}>
                                                                 {driver.email}
                                                             </span>
                                                         </Col>
 
                                                         <Col xs={12} sm={12} md={12} lg={3} className={styles.drivers_info_div_card_col}>
-                                                         <span className={styles.drivers_info_div_card_span}>
+                                                            <span className={styles.drivers_info_div_card_header_span}>
+                                                                First Name:
+                                                            </span>{" "}<span className={styles.drivers_info_div_card_span}>
                                                                 {driver.first_name}
                                                             </span>
                                                         </Col>
 
-                                                        <Col xs={12} sm={12} md={12}  lg={3} className={styles.drivers_info_div_card_col}>
-                                                         <span className={styles.drivers_info_div_card_span}>
+                                                        <Col xs={12} sm={12} md={12} lg={3} className={styles.drivers_info_div_card_col}>
+                                                            <span className={styles.drivers_info_div_card_header_span}>
+                                                                Last Name:
+                                                            </span>{" "}<span className={styles.drivers_info_div_card_span}>
                                                                 {driver.last_name}
                                                             </span>
                                                         </Col>
 
-                                                        <Col xs={12} sm={12} md={12}  lg={3} className={styles.drivers_info_div_card_col}>
-                                                       <span className={styles.drivers_info_div_card_span}>
+                                                        <Col xs={12} sm={12} md={12} lg={3} className={styles.drivers_info_div_card_col}>
+                                                            <span className={styles.drivers_info_div_card_header_span}>
+                                                                CDL No:
+                                                            </span>{" "}<span className={styles.drivers_info_div_card_span}>
                                                                 {driver.cdl_no}
                                                             </span>
                                                         </Col>
@@ -125,22 +135,22 @@ export default function DriverInfo() {
 
                                                 <Card.Footer className={styles.drivers_info_div_card_footer}>
 
-                                                    <Row className={styles.drivers_info_div_card_row}>
-                                                        <Col xs={6} sm={6} md={6} lg={6} className={styles.trucks_info_div_card_col}>
+                                                    <Row className={`${styles.drivers_info_div_card_row} ${styles.drivers_info_div_button_row}`}>
+                                                        <Col xs={6} sm={6} md={6} lg={6} className={` ${styles.drivers_info_div_card_col} ${styles.trucks_info_div_button_col}`} >
 
                                                             <div className={styles.drivers_info_card_button_div}>
                                                                 <Button variant="danger" className={styles.drivers_info_card_button} onClick={(e) => onSelectDriver(e, driver)}>
-                                                                    Edit
+                                                                    EDIT
                                                                 </Button>
                                                             </div>
 
                                                         </Col>
 
-                                                        <Col xs={6} sm={6} md={6} lg={6} className={styles.drivers_info_div_card_col}>
+                                                        <Col xs={6} sm={6} md={6} lg={6} className={` ${styles.drivers_info_div_card_col} ${styles.trucks_info_div_button_col}`} >
 
                                                             <div className={styles.drivers_info_delete_button_div}>
                                                                 <Button variant="danger" className={styles.drivers_info_delete_button} onClick={(e) => onDelete(e, driver)}>
-                                                                    Delete
+                                                                    DELETE
                                                                 </Button>
                                                             </div>
 
@@ -162,7 +172,7 @@ export default function DriverInfo() {
                     {new Date().valueOf() > new Date(user.paid_until).valueOf() ? <div></div> :
                         <div className={styles.trucks_info_button_div}>
                             <Button variant="danger" className={styles.drivers_info_button} onClick={(e) => setShowModal(true)}>
-                                Add Driver
+                                ADD DRIVER
                             </Button>
                         </div>
                     }
