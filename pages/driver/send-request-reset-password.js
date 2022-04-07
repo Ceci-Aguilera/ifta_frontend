@@ -1,23 +1,23 @@
 import Link from 'next/link'
 import { Card, Col, Row, Container, Button, Form } from "react-bootstrap";
-import styles from "../styles/Login.module.css";
+import styles from "../../styles/Login.module.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+
 import { useRouter } from "next/router";
 
 const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME;
 
-const ResetPasswordComponent = ({ uid, token, user }) => {
+const SendRequestResetPasswordComponent = () => {
+
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("")
 
     const router = useRouter();
 
-    const [password, setPassword] = useState("");
-    const [re_password, setRePassword] = useState("");
-    const [message, setMessage] = useState("")
-
-    const resetPasswordHandler = async (e) => {
+    const sendRequestResetPasswordHandler = async (e) => {
         e.preventDefault();
-        await reset_password(password, re_password, uid, token, user, router);
+        await send_request_reset_password(email, setMessage, router);
     };
 
     return (
@@ -36,21 +36,10 @@ const ResetPasswordComponent = ({ uid, token, user }) => {
                         <Form.Group className={`mb-3 ${styles.form_group}`}>
                             <Form.Control
                                 className={styles.form_control}
-                                type="password"
-                                placeholder="Password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </Form.Group>
-                    </Row>
-                    <Row>
-                        <Form.Group className={`mb-3 ${styles.form_group}`}>
-                            <Form.Control
-                                className={styles.form_control}
-                                type="password"
-                                placeholder="Re-enter Password"
-                                value={re_password}
-                                onChange={(e) => setRePassword(e.target.value)}
+                                type="email"
+                                placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </Form.Group>
                     </Row>
@@ -58,7 +47,7 @@ const ResetPasswordComponent = ({ uid, token, user }) => {
                 <Card.Footer className={styles.card_footer}>
                     <Button
                         className={styles.card_footer_button}
-                        onClick={(e) => resetPasswordHandler(e)}
+                        onClick={(e) => sendRequestResetPasswordHandler(e)}
                     >
                         Reset Password
                     </Button>
@@ -68,7 +57,7 @@ const ResetPasswordComponent = ({ uid, token, user }) => {
     );
 };
 
-const reset_password = async (password, re_password, uid, token, user, router) => {
+const send_request_reset_password = async (email, setMessage, router) => {
     const config = {
         headers: {
             "Content-Type": "application/json",
@@ -76,25 +65,21 @@ const reset_password = async (password, re_password, uid, token, user, router) =
     };
 
     const body = JSON.stringify({
-        password,
-        re_password,
+        email,
     });
 
-    var info_url = `${domain}/user-account/reset-password/${uid}/${token}`;
-
-    if(!user){
-        info_url = `${domain}/user-account/driver/reset-password/${uid}/${token}`;
-    }
-
+    const info_url = `${domain}/user-account/driver/send-request-reset-password`;
     axios
         .post(info_url, body, config)
         .then(async (res) => {
-            router.push('/credentials/login/')
+            const result = await res.data;
+            router.push('/')
         })
         .catch((error) => {
             console.log(error);
+            setMessage("Error User with that email do not exists")
         });
 }
 
 
-export default ResetPasswordComponent;
+export default SendRequestResetPasswordComponent;
