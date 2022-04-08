@@ -1,3 +1,17 @@
+.navbar_banner{
+    height: 100px !important;
+    width: 100%;
+    background-color: #2c2c2c !important;
+}
+
+.navbar_h1{
+    color: white !important;
+    text-align: center !important;
+    align-self: baseline;
+    line-height: 100px !important;
+    font-size: 4.0rem !important;
+}
+
 .start_now_section{
     width: 100% !important;
     max-width: 1000px !important; 

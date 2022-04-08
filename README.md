@@ -1,4 +1,4 @@
-# IFTA YA! ![IFTA YA LOGO](/public/logos/ifta-logo-dark.svg)
+# IFTA ya! ![IFTA ya LOGO](/public/logos/ifta-logo-dark.svg)
 
 ## Table of Contents
 
@@ -14,9 +14,9 @@
 
 #### Introduction
 
-__IFTA YA!__ is a website that helps owner operators (Truck drivers that own their truck) to have a fast, simple, and secure way of keeping their IFTA taxes up to date. To do so, this project has 3 main apps: a Next js Frontend (this repo), A Flask Backend API (where most of the logic and calculations occur), and a Flutter app for both Android and IOS devices (that is used for the Truck Driver to input new Entries when adding Fuel or Recording Miles).
+__IFTA ya!__ is a website that helps owner operators (Truck drivers that own their truck) to have a fast, simple, and secure way of keeping their IFTA taxes up to date. To do so, this project has 3 main apps: a Next js Frontend (this repo), A Flask Backend API (where most of the logic and calculations occur), and a Flutter app for both Android and IOS devices (that is used for the Truck Driver to input new Entries when adding Fuel or Recording Miles).
 
- There are two kind of clients, those owner operators that have only one truck (the one that they drive), and those owner operators that have multiple trucks and drive one of them. The __IFTA YA!__ project targets the clients of the first kind, however it offers lots of features and accommodations for the second kind clients as well.
+ There are two kind of clients, those owner operators that have only one truck (the one that they drive), and those owner operators that have multiple trucks and drive one of them. The __IFTA ya!__ project targets the clients of the first kind, however it offers lots of features and accommodations for the second kind clients as well.
 
 #### How do the 3 apps work together?
 
