@@ -6,7 +6,7 @@
 1. [Quick Installation for testing using Docker](#docker)
 1. [Custom Installation](#installation)
 1. [Screenshots of the Frontend React App](#screenshots_frontend)
-
+1. [Screenshots of the Flutter (Android + IOS) App](#screenshots_flutter)
 
 <a name="docker"></a>
 
@@ -14,13 +14,14 @@
 
 #### Introduction
 
-__IFTA ya!__ is a website that helps owner operators (Truck drivers that own their truck) to have a fast, simple, and secure way of keeping their IFTA taxes up to date. To do so, this project has 3 main apps: a Next js Frontend (this repo), A Flask Backend API (where most of the logic and calculations occur), and a Flutter app for both Android and IOS devices (that is used for the Truck Driver to input new Entries when adding Fuel or Recording Miles).
+**IFTA ya!** is a website that helps owner operators (Truck drivers that own their truck) to have a fast, simple, and secure way of keeping their IFTA taxes up to date. To do so, this project has 3 main apps: a Next js Frontend (this repo), A Flask Backend API (where most of the logic and calculations occur), and a Flutter app for both Android and IOS devices (that is used for the Truck Driver to input new Entries when adding Fuel or Recording Miles).
 
- There are two kind of clients, those owner operators that have only one truck (the one that they drive), and those owner operators that have multiple trucks and drive one of them. The __IFTA ya!__ project targets the clients of the first kind, however it offers lots of features and accommodations for the second kind clients as well.
+There are two kind of clients, those owner operators that have only one truck (the one that they drive), and those owner operators that have multiple trucks and drive one of them. The **IFTA ya!** project targets the clients of the first kind, however it offers lots of features and accommodations for the second kind clients as well.
 
 #### How do the 3 apps work together?
 
-__Notes about IFTA Taxes:__ 
+**Notes about IFTA Taxes:**
+
 - An owner operator is a Truck driver that owns a truck.
 - An owner operator can have multiple trucks and drive only one.
 - A different IFTA Taxes Report is presented for each truck that a client owns, that is, if a client has 10 trucks, then each truck has its own IFTA Taxes Report that is independent of the other trucks and how they manage their IFTA Taxes.
@@ -31,11 +32,8 @@ When an owner operator creates an account, he administrate from the Next js App 
 
 When a driver logs into the Flutter app, the app tries to find the truck that was assigned to by the owner operator. Therefore, each time the driver adds fuel gallons or miles, it is not needed to specify the truck that is driving, as it has be already configured. To change the current driver the owner operator can go to the Next js App. Note that this method guarantees that even if a truck has multiple drivers in a quarter, its taxes can be easily deduced.
 
-
-
-
-
 <a name="docker"></a>
+
 ### Quick Installation for testing using Docker
 
 1. Clone the repo:
@@ -60,7 +58,6 @@ When a driver logs into the Flutter app, the app tries to find the truck that wa
 
 1. Congratulations =) !!! the app should be running in [localhost:3000](http://localhost:3000)
 
-
 <a name="installation"></a>
 
 ### Custom Installation
@@ -72,6 +69,7 @@ When a driver logs into the Flutter app, the app tries to find the truck that wa
    ```
 
 1. Install dependencies:
+
    ```bash
    npm install
    ```
@@ -90,7 +88,6 @@ When a driver logs into the Flutter app, the app tries to find the truck that wa
 
 1. Congratulations =) !!! the app should be running in [localhost:3000](http://localhost:3000)
 
-
 <a name="screenshots_frontend"></a>
 
 ### Screenshots of Selected Pages of the Frontend NEXT JS App
@@ -102,13 +99,15 @@ When a driver logs into the Flutter app, the app tries to find the truck that wa
 ![alt text](./screenshots/Account_Info_Mobile.png) ![alt text](./screenshots/Truck_Info_Mobile.png) ![alt text](./screenshots/Quarters_Mobile.png)
 
 ---
-#### Desktop 
+
+#### Desktop
 
 ##### View of the Landing Page
 
 ![alt text](./screenshots/Landing_Website.png)
 
 ---
+
 ##### View of the Account Information Page
 
 ![alt text](./screenshots/Account_Info.png)
@@ -125,4 +124,12 @@ When a driver logs into the Flutter app, the app tries to find the truck that wa
 
 ![alt text](./screenshots/Quarters.png)
 
+---
 
+<a name="screenshots_flutter"></a>
+
+### Screenshots of the Flutter (Android + IOS) App
+
+![alt text](./screenshots/Flutter_Landing.png) ![alt text](./screenshots/Flutter_Fueling.png) ![alt text](./screenshots/Flutter_Miles.png)
+
+![alt text](./screenshots/Flutter_Quarters.png) ![alt text](./screenshots/Flutter_Selected_Quarter.png) ![alt text](./screenshots/Flutter_Selected_Quarter_State.png)
