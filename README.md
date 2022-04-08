@@ -191,7 +191,7 @@ __Note:__ Before following these steps clone this repository. From now on the se
 
 </div>
 
-<div style="text-align:center">
+<div align="center">
 
 ![alt text](./screenshots/Account_Info_Mobile.png) ![alt text](./screenshots/Truck_Info_Mobile.png) ![alt text](./screenshots/Quarters_Mobile.png)
 
@@ -234,7 +234,7 @@ __Note:__ Before following these steps clone this repository. From now on the se
 
 </div>
 
-<div style="text-align:center">
+<div align="center">
 
 ![alt text](./screenshots/Flutter_Quarters.png) ![alt text](./screenshots/Flutter_Selected_Quarter.png) ![alt text](./screenshots/Flutter_Selected_Quarter_State.png)
 

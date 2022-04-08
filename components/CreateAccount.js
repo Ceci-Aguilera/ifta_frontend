@@ -199,7 +199,7 @@ const CreateAccount = ({register}) => {
                 >
                   <option
                     className={styles.select_form_option}
-                    value={"FL"}
+                    value={"None"}
                     disabled
                   >
                     State
