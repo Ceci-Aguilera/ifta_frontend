@@ -114,6 +114,11 @@
   display: none !important;
 }
 
+.trucks_info_div_button_row{
+  width: 50% !important;
+  margin-left: auto !important;
+}
+
 @media screen and (max-width: 578px) {
   .trucks_info_table_card_header_col {
     display: none !important;
@@ -175,5 +180,11 @@
     margin-left: auto !important;
     margin-right: auto !important;
     text-align: center !important; 
+  }
+
+  .trucks_info_div_button_row{
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }

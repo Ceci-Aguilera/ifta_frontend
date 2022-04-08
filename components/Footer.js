@@ -11,7 +11,7 @@ export default function NextFooter() {
     return(
         <footer className={styles.footer}>
             <p className={styles.footer_p}>
-                Follows in
+                Follow us in
             </p>
 
             <Row className={styles.footer_row}>
@@ -27,6 +27,15 @@ export default function NextFooter() {
                     <Image src={youtube_icon} height={50} width={50} alt="Youtube Red Icon" />
                 </Col>
             </Row>
+
+        <div className={styles.footer_dev_div}>
+            <p className={styles.footer_dev_p}>
+                <span className={styles.footer_dev_span}>
+                Developed by:
+                </span>{" "}
+                 Cecilia Fernandez Aguilera
+            </p>
+        </div>
         </footer>
     );
 };
