@@ -27,11 +27,18 @@ export default function PresentationBanner() {
           <Row className={styles.banner_row}>
             <Col xs={12} sm={12} md={12} lg={6} className={styles.banner_col}>
               <div className={styles.banner_col_wrapper}>
+              <div className={styles.banner_logo_image_div}>
+
                 <Image
                   src={ifta_logo}
                   alt="Ifta Now Logo"
                   className={styles.ifta_logo_img}
+                  // width={250}
+                  // height={100}
+                  layout="fill"
+                  objectFit="cover"
                 />
+              </div>
 
                 <h2 className={styles.banner_h2}>
                   Save time and money with our APP

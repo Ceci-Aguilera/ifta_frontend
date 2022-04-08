@@ -119,7 +119,7 @@
   margin-left: auto !important;
 }
 
-@media screen and (max-width: 578px) {
+@media screen and (max-width: 758px) {
   .trucks_info_table_card_header_col {
     display: none !important;
   }

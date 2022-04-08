@@ -59,7 +59,7 @@
   text-align: center !important;
 }
 
-@media screen and (max-width: 578px) {
+@media screen and (max-width: 758px) {
     .clients_testimony_card_img_div, .clients_testimony_card_body{
         margin-left: auto !important;
         margin-right: auto !important;

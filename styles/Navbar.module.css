@@ -20,7 +20,7 @@
     background-color: #696d71 !important;
 }
 
-@media screen and (max-width:578px){
+@media screen and (max-width:758px){
     .navbar_brand{
         height: 100% !important;
         width: 150px !important;

@@ -45,7 +45,7 @@
     text-align: center !important;
 }
 
-@media screen and (max-width:578px){
+@media screen and (max-width:758px){
     .complex_banner_background_div{
         display: none !important;
     }

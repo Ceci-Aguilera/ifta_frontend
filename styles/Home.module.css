@@ -244,7 +244,7 @@
     font-size: 1.8rem !important;
 }
 
-@media screen and (max-width:578px){
+@media screen and (max-width:758px){
     .features_section_video_div{
         width: 90% !important;
         max-width: 400px !important;
@@ -311,6 +311,41 @@
         flex-direction: row !important;
         align-items: center !important;
         justify-content:space-around;
+    }
+
+    .navbar_banner{
+        display: None !important;
+    }
+
+    .title_h2{
+        font-size: 2.5rem !important;
+        font-weight: bold !important;
+    }
+    
+    .start_section_p{
+        width: 90% !important;
+        margin-left: auto!important;
+        margin-right: auto !important;
+        font-size: 1.5rem !important;
+        text-align: center !important;
+    }
+
+    .start_now_button{
+        width: 200px !important;
+        height: 60px !important;
+        background-color: #e1242b !important;
+        border-radius: 0px;
+        font-size: 1.5rem !important;
+        font-weight: bold !important;
+    }
+
+    .step_section_button{
+        width: 200px !important;
+        height: 60px !important;
+        background-color: #e1242b !important;
+        border-radius: 0px;
+        font-size: 1.5rem !important;
+        font-weight: bold !important;
     }
     
 }

@@ -96,7 +96,7 @@
     font-weight: bold !important;
 }
 
-@media screen and (max-width: 578px){
+@media screen and (max-width: 758px){
     .quarter_taxes_table_card_header_col{
         display: none;
     }
