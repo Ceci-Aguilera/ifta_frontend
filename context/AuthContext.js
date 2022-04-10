@@ -129,6 +129,7 @@ export const AuthProvider = ({ children }) => {
         router.push("/");
       })
       .catch(async (error) => {
+        alert("Please check that all the fields are filled. If the error persist please contact ifta-ya! support")
         const result = await error;
       });
   };

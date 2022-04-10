@@ -116,7 +116,7 @@ export default function QuarterTaxes({ year, truck_id }) {
                                             <div>
                                                 {quarters.map((quarter, index) => {
                                                     return (
-                                                        <Link key={index} href={`/credentials/manage-account/quarter-taxes-report/${year}/${truck_id}/${quarter.number}`}>
+                                                        <Link key={index} href={`${domain}/staff/ifta-tax-report/${user.email}/${truck_id}/${year}/${quarter.number}`}>
 
                                                             <Card className={styles.quarter_taxes_card}>
                                                                 <Card.Body className={styles.trucks_info_card_body}>

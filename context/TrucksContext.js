@@ -82,6 +82,7 @@ const addTruck = async(body) => {
     return axios.post(truck_url, body, config).then(async (response) => {
       window.location.reload(false);
   }).catch(async (error) => {
+    alert("Please check that all the fields are filled")
       console.log(error);
   })
 }
@@ -103,6 +104,7 @@ const editTruck = async(truck_id, body) => {
     return axios.post(truck_url, body, config).then(async (response) => {
       window.location.reload(false);
   }).catch(async (error) => {
+    alert("Please check that all the fields are filled (including Driver)")
       console.log(error);
   })
 }

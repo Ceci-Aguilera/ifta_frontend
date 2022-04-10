@@ -87,6 +87,7 @@ export const DriversProvider = ({ children }) => {
             })
             .catch(async (error) => {
                 setLoading(false);
+                alert("Please check that all the fields are filled")
                 const result = await error;
             });
     };
@@ -107,6 +108,7 @@ export const DriversProvider = ({ children }) => {
         return axios.post(driver_url, body, config).then(async (response) => {
             window.location.reload(false);
         }).catch(async (error) => {
+            alert("Please check that all the fields are filled")
             console.log(error);
         })
     }

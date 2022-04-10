@@ -21,6 +21,11 @@ export default function QuarterTaxesReport({ year, truck_id, quarter_number }) {
     const [taxes, setTaxes] = useState(null);
     const [state_reports, setStateReports] = useState(null);
 
+    const sendTaxesPDF_Handler = async(e) => {
+        e.preventDefault();
+        await sendTaxesPDF(token, truck_id, year, quarter_number)
+    }
+
 
     useEffect(() => {
         if (year != null && year != undefined && truck_id != null && truck_id != undefined) {
@@ -163,8 +168,8 @@ export default function QuarterTaxesReport({ year, truck_id, quarter_number }) {
         </div> */}
 
                             <div className={styles.save_pdf_button_div}>
-                                <Button variant="danger" className={styles.save_pdf_button} onClick={(e) => sendTaxesPDF(truck_id, id)}>
-                                    Send PDF
+                                <Button variant="danger" className={styles.save_pdf_button} onClick={(e) => sendTaxesPDF_Handler(e)}>
+                                    Send Email
                                 </Button>
                             </div>
                         </div>
@@ -175,6 +180,27 @@ export default function QuarterTaxesReport({ year, truck_id, quarter_number }) {
             </main>
         </div>
     );
+}
+
+const sendTaxesPDF = async(token, truck_id, year, quarter_number) => {
+
+    const config = {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
+      };
+
+      const send_tax_pdf_url =  `${domain}/quarter-taxes/send-report/${truck_id}/${year}/${quarter_number}`;
+  
+      return await axios
+        .get(send_tax_pdf_url, config)
+        .then(async (response) => {
+            console.log(response)
+        })
+        .catch((err) => {
+          console.log(err)
+        });
 }
 
 
