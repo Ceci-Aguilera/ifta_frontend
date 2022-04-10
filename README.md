@@ -4,7 +4,7 @@
 
  # IFTA ya!
 
-![Next js version](https://img.shields.io/badge/NEXT_js-12.1.0-4c566a?logo=next.js&&longCache=truelogoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Flask version](https://img.shields.io/badge/Flask-2.0.3-4c566a?logo=flask&&longCache=truelogoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Flutter version](https://img.shields.io/badge/Flutter-2.11.0-4c566a?logo=flutter&&longCache=truelogoColor=white&colorB=pink&style=flat-square&colorA=4c566a)  ![Commit activity](https://img.shields.io/github/commit-activity/y/Ceci-Aguilera/ifta_flask_backend_api/master?&&longCache=true&logoColor=white&colorB=a3be8c&style=flat-square&colorA=4c566a)
+![Next js version](https://img.shields.io/badge/NEXT_js-12.1.0-4c566a?logo=next.js&&longCache=truelogoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Flask version](https://img.shields.io/badge/Flask-2.0.3-4c566a?logo=flask&&longCache=truelogoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Flutter version](https://img.shields.io/badge/Flutter-2.11.0-4c566a?logo=flutter&&longCache=truelogoColor=white&colorB=pink&style=flat-square&colorA=4c566a)  ![Commit activity](https://img.shields.io/github/commit-activity/y/Ceci-Aguilera/ifta_frontend/master?&&longCache=true&logoColor=white&colorB=green&style=flat-square&colorA=4c566a)
 
 </div>
 
