@@ -172,8 +172,8 @@ __Note:__ Before following these steps clone this repository. From now on the se
 
 
 - #### Running without Docker and Docker Compose
-   1. Follow the intructions of the __Install (Run) with Docker__ section in the Readme.md of the [Flask Backend API repository](https://github.com/Ceci-Aguilera/ifta_flask_backend_api) to configure and run the backend.
-   1. Follow the instructions of section __Install (Run) with Docker__ of this Readme.md. Modify the NEXT_PUBLIC_API_DOMAIN_NAME to be the url of the __Flask__ Backend API (by default it is [http://localhost:5050](http://localhost:5050)).
+   1. Follow the intructions of the __Installation without Docker__ section in the Readme.md of the [Flask Backend API repository](https://github.com/Ceci-Aguilera/ifta_flask_backend_api) to configure and run the backend.
+   1. Follow the instructions of section __Installation without Docker__ of this Readme.md. Modify the NEXT_PUBLIC_API_DOMAIN_NAME to be the url of the __Flask__ Backend API (by default it is [http://localhost:5050](http://localhost:5050)).
    1. Congratulations =) !!! the frontend app should be running in [localhost:3000](http://localhost:3000) while the backend is at [localhost:5050](http://localhost:5050)
 
 
