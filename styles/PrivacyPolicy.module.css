@@ -1,0 +1,27 @@
+.privacy_notice_div{
+    width: 80% !important;
+    color: #353535 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 200px !important;
+}
+
+.privacy_notice_section_header_title{
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+    font-weight: bold;
+    text-align:center !important;
+}
+
+.p{
+    color: #4e5052 !important;
+    font-size: 1.1rem;
+}
+
+.span{
+    font-weight: bold;
+}
+
+.span_italic{
+    font-style: italic;
+}
