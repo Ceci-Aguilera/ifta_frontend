@@ -413,7 +413,7 @@ export default function Home() {
         </div>
 
         <div className={styles.clients_testimony_div}>
-          <ClientsTestimony />
+          {/* <ClientsTestimony /> */}
         </div>
       </main>
     </div>
